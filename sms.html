@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Fighting Game Notes: Sailor Moon S</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="apple-touch-icon-precomposed" sizes="57x57" href="apple-touch-icon-57x57.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="apple-touch-icon-114x114.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="apple-touch-icon-72x72.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="apple-touch-icon-144x144.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="60x60" href="apple-touch-icon-60x60.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="120x120" href="apple-touch-icon-120x120.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="76x76" href="apple-touch-icon-76x76.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="apple-touch-icon-152x152.png" />
+    <link rel="icon" type="image/png" href="favicon-196x196.png" sizes="196x196" />
+    <link rel="icon" type="image/png" href="favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/png" href="favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="favicon-16x16.png" sizes="16x16" />
+    <link rel="icon" type="image/png" href="favicon-128.png" sizes="128x128" />
+    <meta name="application-name" content="&nbsp;"/>
+    <meta name="msapplication-TileColor" content="#FFFFFF" />
+    <meta name="msapplication-TileImage" content="mstile-144x144.png" />
+    <meta name="msapplication-square70x70logo" content="mstile-70x70.png" />
+    <meta name="msapplication-square150x150logo" content="mstile-150x150.png" />
+    <meta name="msapplication-wide310x150logo" content="mstile-310x150.png" />
+    <meta name="msapplication-square310x310logo" content="mstile-310x310.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+  <body>
+    <header class="sms-head">
+
+      <!-- Login Prompt -->
+      <div class="login">
+        <div class="username">
+          <input type="text" name="user" id="user" placeholder="username">
+        </div>
+        <div class="password">
+          <input type="password" name="pass" id="pass" placeholder="password" type="text">
+        </div>
+        <div class="login-button">
+          <a href="#" class="button">Login</a>
+        </div>
+        <div class="register-button">
+          <a href="#" class="button">Register</a>
+        </div>
+      </div>
+
+      <!-- Heading -->
+      <div class="wrapper">
+        <h1>Sailor Moon S</h1>
+      </div>
+    </header>
+
+    <main>
+      <section class="selection-head">
+        <h2>Select your matchup:</h2>
+      </section>
+      <section class="char-select clearfix">
+        <select class="your-character" name="your-character">
+          <option value="moon">Moon</option>
+          <option value="mars">Mars</option>
+          <option value="mercury">Mercury</option>
+          <option value="venus">Venus</option>
+          <option value="jupiter">Jupiter</option>
+          <option value="pluto">Pluto</option>
+          <option value="uranus">Uranus</option>
+          <option value="neptune">Neptune</option>
+          <option value="chibi">Chibi Moon</option>
+        </select>
+        vs.
+        <select class="opp-character" name="opp-character">
+          <option value="moon">Moon</option>
+          <option value="mars">Mars</option>
+          <option value="mercury">Mercury</option>
+          <option value="venus">Venus</option>
+          <option value="jupiter">Jupiter</option>
+          <option value="pluto">Pluto</option>
+          <option value="uranus">Uranus</option>
+          <option value="neptune">Neptune</option>
+          <option value="chibi">Chibi Moon</option>
+        </select>
+        <a href="#stick" class="button show-notes">Show Notes</a>
+        <a href="index.html"  class="button external">Back</a>
+      </section>
+      <section class="char-notes">
+        <div class="wrapper">
+          Filter by:
+          <select class="note-filter" name="note-filter">
+            <option value="punish">Punish</option>
+            <option value="anti-air">Anti-air</option>
+            <option value="air-to-air">Air-to-air</option>
+            <option value="evasion">Evasion</option>
+            <option value="frame-trap">Frame Trap</option>
+            <option value="option-select">Option Select</option>
+            <option value="mixup">Mix-up</option>
+            <option value="movement">Movement</option>
+            <option value="strategy">Strategy</option>
+          </select>
+          <a href="#stick" class="button filter">Filter</a> <a href="#stick" class="button show-all">Show All</a>
+        </div>
+        <div class="notes" id="stick">
+          <ul>
+            <li class="mercury-v-venus punish">Wake-up fake meaty up fireball can be punished by wake-up SBK, do not wake up block.</li>
+            <li class="mercury-v-venus anti-air">j.lk can be beaten by SBK.</li>
+            <li class="mercury-v-venus anti-air">j.hp has no forward/downward hurtbox, block then guard cancel tornado to push out or hit on landing frames.</li>
+            <li class="mercury-v-venus evasion">Guard cancel backdash out of desperation, does obscene chip</li>
+            <li class="mercury-v-venus movement">Do not do wakeup backdash in corner, only do on guard cancel against true meaties</li>
+            <li class="mercury-v-venus air-to-air">j.hk will beat most aerial options</li>
+            <li class="mercury-v-venus evasion">You can duck her Crescent Beam, no need to low-profile</li>
+            <li class="mercury-v-venus punish">Whiff punish s.hp, c.hp with charge fireball</li>
+            <li class="uranus-v-pluto strategy">Pluto can guard cancel knee press a backdash cancelled slide to beat fireball outright. Prepare to block and guard cancel backdash.</li>
+            <li class="uranus-v-mars strategy">Keep neutral range and negate her low fireballs with your fireball</li>
+            <li class="uranus-v-mars punish">Slide if you see an air fireball around 2/3 screen range</li>
+            <li class="uranus-v-mars frame-trap">Can do a lot of pressure in the corner, as she has a hard time guard cancelling your pressure.</li>
+            <li class="uranus-v-mars evasion">Guard cancel backdash her desperation if it hits on block, or enjoy 30% chip.</li>
+            <li class="uranus-v-neptune punish">You can guard cancel forward dash into ininite on blocked fireball from neutral</li>
+            <li class="mercury-v-mercury punish">Beat her corner pressure with guard cancel tornado</li>
+            <li class="mercury-v-mercury evasion">When she's in desperation percent, space out with charge fireball instead of tornado, the TK input could give you a jump that could be hit with desperation.</li>
+            <li class="mercury-v-venus evasion">Guard cancel backdash on meaty corner DP.</li>
+            <li class="mercury-v-venus option-select">After meaty c.lk in corner, do f+hp. If no backdash, you get throw. If backdashed, you'll hit the backdash recovery and if charged, can do fireball after.</li>
+            <li class="uranus-v-chibi punish">If she does slide XX fireball, guard cancel fireball to punish.</li>
+            <li class="uranus-v-jupiter air-to-air">Beat fj.lk with nj.hk</li>
+            <li class="uranus-v-jupiter mixup">After successful air-to-air, you can mix-up with instant slide, late slide, forward dash slide, or double forward dash 360.</li>
+            <li class="uranus-v-jupiter mixup">On Japanese fake fireball setup, must watch out for lariat and should do forward dash, back dash option if expected</li>
+            <li class="uranus-v-jupiter evasion">Can forward dash air fireball until it lands.</li>
+            <li class="uranus-v-jupiter evasion">Only slide under charge fireball if you're in range to hit her with the tip of your slide, otherwise block or jump over.</li>
+          </ul>
+        </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+      <div class="wrapper">
+        © 2017 Corey Lanier
+      </div>
+    </footer>
+
+    <!-- Jquery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js">
+
+    </script>
+
+    <!-- Scripts -->
+    <script src="scripts.js">
+
+    </script>
+  </body>
+</html>

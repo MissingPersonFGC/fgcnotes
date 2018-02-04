@@ -1,0 +1,658 @@
+// Local Font Imports
+
+@font-face {
+  font-family: 'American Captain';
+  src: url('amercapt.otf') format('opentype');
+  src: url('amercapt.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Falling Sky';
+  src: url('FallingSky.otf') format('opentype');
+}
+
+// SCSS Imports
+
+@import 'variables';
+
+@import 'normalize';
+
+@import 'clearfix';
+
+@import 'borderbox';
+
+@import 'mixins';
+
+// Main Formatting
+
+body {
+  font-family: $font-main;
+  color: darken($color-secondary,20);
+  background: $color-main;
+  font-size: 16px;
+}
+
+header {
+  height: 65vh;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+
+  &.main-page-head {
+    background: linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('img/background.jpg');
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: cover;
+    background-attachment: fixed;
+  }
+
+  &.sms-head {
+    background: linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('img/sms-bg.jpg');
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: cover;
+    background-attachment: fixed;
+  }
+
+  &.ssf2t-head {
+    background: linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('img/ssf2t-bg.jpg');
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: cover;
+    background-attachment: fixed;
+  }
+
+  &.cvs2-head {
+    background: linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('img/cvs2-bg.jpg');
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: cover;
+    background-attachment: fixed;
+  }
+
+  &.jcfof-head {
+    background: linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('img/jcfof-bg.jpg');
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: cover;
+    background-attachment: fixed;
+  }
+
+  &.ah3-head {
+    background: linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('img/ah3-bg.jpg');
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: cover;
+    background-attachment: fixed;
+  }
+
+  &.p4a-head {
+    background: linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('img/p4a-bg.jpg');
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: cover;
+    background-attachment: fixed;
+  }
+
+  &.players-head {
+    background: linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('img/players-bg.jpg');
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: cover;
+    background-attachment: fixed;
+  }
+
+  &.sfiv-head {
+    background: linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('img/sfiv-bg.jpg');
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: cover;
+    background-attachment: fixed;
+  }
+
+  &.ggxrd-head {
+    background: linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('img/ggxrd-bg.png');
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: cover;
+    background-attachment: fixed;
+  }
+
+  &.unist-head {
+    background: linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('img/unist-bg.jpg');
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: cover;
+    background-attachment: fixed;
+  }
+
+  &.ssbm-head {
+    background: linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('img/ssbm-bg.jpg');
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: cover;
+    background-attachment: fixed;
+  }
+
+  &.dbfc-head {
+    background: linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('img/dbfc-bg.jpg');
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: cover;
+    background-attachment: fixed;
+  }
+
+  &.mkx-head {
+    background: linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('img/mkx-bg.jpg');
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: cover;
+    background-attachment: fixed;
+  }
+
+  &.ij2-head {
+    background: linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('img/ij2-bg.jpg');
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: cover;
+    background-attachment: fixed;
+  }
+
+  &.ssb4-head {
+    background: linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('img/ssb4-bg.jpg');
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: cover;
+    background-attachment: fixed;
+  }
+
+  &.kof2002-head {
+    background: linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('img/kof2002-bg.jpg');
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: cover;
+    background-attachment: fixed;
+  }
+
+  &.kof98um-head {
+    background: linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('img/kof98um-bg.jpg');
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: cover;
+    background-attachment: fixed;
+  }
+
+  &.sf3-head {
+    background: linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('img/sf3-bg.jpg');
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: cover;
+    background-attachment: fixed;
+  }
+
+  &.tmnttf-head {
+    background: linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('img/tmnttf-bg.jpg');
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: cover;
+    background-attachment: fixed;
+  }
+
+  &.sfv-head {
+    background: linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('img/sfv-bg.jpg');
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: cover;
+    background-attachment: fixed;
+  }
+
+  &.t7-head {
+    background: linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('img/t7-bg.jpg');
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: cover;
+    background-attachment: fixed;
+  }
+
+  &.bb-head {
+    background: linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('img/bb-bg.jpg');
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: cover;
+    background-attachment: fixed;
+  }
+
+  &.sg-head {
+    background: linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('img/sg-bg.jpg');
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: cover;
+    background-attachment: fixed;
+  }
+
+  &.kof14-head {
+    background: linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('img/kof14-bg.jpg');
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: cover;
+    background-attachment: fixed;
+  }
+
+  &.kof13-head {
+    background: linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('img/kof13-bg.jpg');
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: cover;
+    background-attachment: fixed;
+  }
+
+  &.ki-head {
+    background: linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('img/ki-bg.jpg');
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: cover;
+    background-attachment: fixed;
+  }
+
+  &.kr-head {
+    background: linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('img/kr-bg.jpg');
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: cover;
+    background-attachment: fixed;
+  }
+
+  .login {
+    position: absolute;
+    top: 0;
+    right: 10%;
+    display: flex;
+    flex-direction: row;
+    padding-top: 20px;
+    z-index: 10;
+
+    a {
+      @include button($color-accent, $color-main, $font-second);
+      letter-spacing: 2px;
+    }
+
+    div {
+      padding-right: 10px;
+
+      input {
+        font-family: $font-main;
+        background: rgba(255,255,255,0.6);
+        border: 0;
+        padding: 5px;
+        color: darken($color-secondary,20);
+        margin-top: 5px;
+        width: 120px;
+      }
+
+      &:last-of-type {
+        padding-right: 0;
+      }
+    }
+  }
+
+
+  .wrapper {
+    margin: 0;
+    padding: 0;
+    position: relative;
+    width: 100%;
+    height: 65vh;
+
+    h1 {
+      font-family: $font-second;
+      text-transform: uppercase;
+      font-size: 3.75rem;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      margin: 0 auto;
+      padding: 0;
+      transform: translate(-50%, -50%);
+      color: $color-accent;
+      letter-spacing: 5px;
+    }
+  }
+}
+
+main {
+  padding-bottom: 50px;
+
+  .selection-head {
+    width: 80%;
+    max-width: 1250px;
+    margin: 0 auto;
+
+    h2 {
+      font-size: 1.875rem;
+    }
+  }
+
+  .char-select {
+    @extend .selection-head;
+    text-align: center;
+
+    a {
+      @include button($color-secondary, $color-main, $font-main)
+    }
+
+    select {
+      background: $color-secondary;
+      border: 0;
+      color: $color-main;
+      padding: 5px;
+      margin-right: 10px;
+      font-family: $font-main;
+    }
+
+    .opp-character {
+      margin-left: 10px;
+    }
+  }
+  // Disc Animation
+
+  .game-list {
+    @extend .selection-head;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+
+    .disc-container {
+      margin: 20px;
+      width: 200px;
+      height: 200px;
+      border-radius: 200px;
+      position: relative;
+      perspective: 1000;
+
+      &:hover .game-disc {
+        transform: rotateY(180deg);
+      }
+
+      .game-disc {
+        transition: 0.6s ease;
+        transform-style: preserve-3d;
+        position: relative;
+        border-radius: 50%;
+
+        .game, .description {
+          backface-visibility: hidden;
+          position: absolute;
+          top: 0;
+          left: 0;
+          display: table;
+          width: 200px;
+          height: 200px;
+          border-radius: 50%;
+          text-align: center;
+          background: $color-secondary;
+
+          img, p {
+            vertical-align: middle;
+            display: table-cell;
+            width: 100%;
+          }
+
+          img {
+            display: inline-block;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+          }
+
+          p {
+            font-size: 1.125rem;
+          }
+
+          .ki {
+            width: 70%;
+          }
+
+          .slight-smaller {
+            width: 90%;
+          }
+        }
+
+        .game {
+          transform: rotateY(0deg);
+        }
+
+        .description {
+          color: white;
+          transform: rotateY(180deg);
+          padding: 20px;
+        }
+      }
+    }
+  }
+}
+
+.char-notes {
+  width: 80%;
+  max-width: 1250px;
+  margin: 0 auto;
+  select {
+    background: $color-secondary;
+    border: 0;
+    color: $color-main;
+    padding: 5px;
+    margin-right: 10px;
+    font-family: $font-main;
+  }
+  .wrapper {
+    padding-top: 10px;
+    text-align: center;
+    a {
+      @include button($color-secondary, $color-main, $font-main);
+    }
+  }
+}
+
+// Make the Character Notes and filter initially invisible, then make visible on click
+
+.char-notes ul li, .char-notes .wrapper {
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.5s;
+  // Don't allow white space to push down the footer until notes are revealed
+  display: none;
+}
+
+.char-notes ul li {
+  list-style-type: none;
+  list-style-position: outside;
+
+  &.punish::before {
+    content: 'Punish: ';
+    color: $color-accent;
+  }
+
+  &.anti-air::before {
+    content: 'Anti-air: ';
+    color: $color-accent;
+  }
+
+  &.air-to-air::before {
+    content: 'Air-to-air: ';
+    color: $color-accent;
+  }
+
+  &.evasion::before {
+    content: 'Evasion: ';
+    color: $color-accent;
+  }
+
+  &.frame-trap::before {
+    content: 'Frame Trap: ';
+    color: $color-accent;
+  }
+
+  &.option-select::before {
+    content: 'Option Select: ';
+    color: $color-accent;
+  }
+
+  &.mixup::before {
+    content: 'Mix-up: ';
+    color: $color-accent;
+  }
+
+  &.movement::before {
+    content: 'Movement: ';
+    color: $color-accent;
+  }
+
+  &.strategy::before {
+    content: 'Strategy: ';
+    color: $color-accent;
+  }
+}
+
+.char-notes ul li.show, .char-notes .wrapper.show {
+  visibility: visible;
+  opacity: 1;
+  transition: opacity 0.5s;
+  // Now it's okay for the list to push down the footer
+  display: block;
+}
+
+// Footer
+
+footer {
+  background: lighten($color-accent,10);
+  color: $color-main;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin: 0 auto;
+  width: 100%;
+
+  .wrapper {
+    width: 80%;
+    max-width: 1250px;
+    margin: 0 auto;
+    padding: 0;
+  }
+}
+
+// Responsive design for smaller browser windows, mainly to fix login
+@media (max-width: 750px) {
+  header {
+    .login {
+      right: 4%;
+    }
+  }
+  main {
+    .selection-head {
+      width: 100%;
+    }
+    .game-list {
+      width: 100%;
+      margin: 0 auto;
+      padding: 0;
+    }
+  }
+}
+
+@media (max-width: 560px) {
+  header {
+    .login {
+      a {
+        @include button-mobile($color-accent, $color-main, $font-second);
+        margin-top: 3px;
+        margin-right: 3px;
+      }
+      div {
+        input {
+          font-size: 0.9rem;
+        }
+      }
+    }
+  }
+}
+
+// Responsive design for mobile devices in portrait mode
+@media (max-width: 480px) {
+  header {
+    height: 33vh;
+
+    .login {
+      right: 3%;
+      a {
+        @include button-mobile($color-accent, $color-main, $font-second);
+        margin-top: 3px;
+        margin-right: 3px;
+      }
+      div {
+        input {
+          width: 60px;
+          font-size: 0.8rem;
+        }
+      }
+    }
+
+    .wrapper {
+      height: 33vh;
+
+      h1 {
+        font-size: 1.5rem;
+      }
+    }
+  }
+
+  main {
+    .selection-head {
+      h2 {
+        font-size: 1.1rem;
+      }
+    }
+    section {
+      select {
+        font-size: 0.8rem;
+      }
+    }
+
+    .char-select {
+      a {
+        @include button-mobile($color-secondary, $color-main, $font-main);
+      }
+    }
+
+    .char-notes {
+      .wrapper {
+        a {
+          @include button-mobile($color-secondary, $color-main, $font-main);
+
+        }
+      }
+    }
+  }
+
+  .game-list {
+
+    .disc-container {
+      width: 100px;
+      height: 100px;
+      border-radius: 100px;
+
+      .game-disc {
+
+        .game, .description {
+          width: 100px;
+          height: 100px;
+
+          p {
+            font-size: 1rem;
+          }
+        }
+      }
+    }
+  }
+}

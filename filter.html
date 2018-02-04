@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <script>
+      const names = ['Sam', 'Jamie', 'Alex', 'Andy', 'August', 'Chris', 'Dakota', 'Drew', 'Max'];
+
+      const shortNames = names.filter((name) => {
+        if (name.length <= 3) {
+          return true;
+        }
+      });
+
+      console.log(shortNames);
+
+      const students = [
+          {
+              name: 'Pat',
+              grade: 58
+          },
+          {
+              name: 'Taylor',
+              grade: 93
+          },
+          {
+              name: 'Dale',
+              grade: 80
+          },
+          {
+              name: 'Casey',
+              grade: 78
+          },
+          {
+              name: 'Jo',
+              grade: 68
+          }
+      ];
+
+      const honourStudents = students.filter((student) => {
+        if (student.grade >= 80) {
+          return true;
+        }
+      });
+
+      console.log(honourStudents);
+
+      const ages = [
+        12,
+        52,
+        64,
+        23,
+        62,
+        15
+      ];
+
+      const oldest = ages.reduce((accumulator, next) => {
+        if (accumulator >= next) {
+          return accumulator;
+        }
+        return next;
+      });
+
+      console.log(oldest);
+      
+      const totalYearsLived = ages.reduce((total, next) => {
+        return total + next;
+      });
+
+      console.log(totalYearsLived);
+    </script>
+  </body>
+</html>

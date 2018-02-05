@@ -1,0 +1,12 @@
+TO DO:
+
+Databasing of matchups
+Databasing of character list, reduce redundancy
+Create page to add notes
+Create logins
+Add match results feature to log your match results, and post-match notes
+Add matchup records, which details your aggretated win/loss ratio and matchup-based ratios per game
+
+Possible:
+
+Expand beyond the FGC, add in MOBAs (DOTA 2, LoL, HoTS) and Overwatch perhaps?

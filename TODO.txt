@@ -6,6 +6,7 @@ Create page to add notes
 Create logins
 Add match results feature to log your match results, and post-match notes
 Add matchup records, which details your aggretated win/loss ratio and matchup-based ratios per game
+Localisation (Priority list: Japanese, Korean, Chinese, French, Spanish)
 
 Possible:
 

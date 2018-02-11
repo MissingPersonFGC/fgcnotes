@@ -544,6 +544,42 @@ header {
     background-position: bottom;
     background-size: cover;
     background-attachment: fixed; }
+  header.pt-head {
+    background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.6)), to(rgba(0, 0, 0, 0.6))), url("../img/pt-bg.jpg");
+    background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("../img/pt-bg.jpg");
+    background: -o-linear-gradient(top, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("../img/pt-bg.jpg");
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("../img/pt-bg.jpg");
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: cover;
+    background-attachment: fixed; }
+  header.dbfz-head {
+    background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.6)), to(rgba(0, 0, 0, 0.6))), url("../img/dbfz-bg.jpg");
+    background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("../img/dbfz-bg.jpg");
+    background: -o-linear-gradient(top, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("../img/dbfz-bg.jpg");
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("../img/dbfz-bg.jpg");
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: cover;
+    background-attachment: fixed; }
+  header.vp-head {
+    background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.6)), to(rgba(0, 0, 0, 0.6))), url("../img/vp-bg.jpg");
+    background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("../img/vp-bg.jpg");
+    background: -o-linear-gradient(top, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("../img/vp-bg.jpg");
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("../img/vp-bg.jpg");
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: cover;
+    background-attachment: fixed; }
+  header.pm-head {
+    background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.6)), to(rgba(0, 0, 0, 0.6))), url("../img/pm-bg.jpg");
+    background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("../img/pm-bg.jpg");
+    background: -o-linear-gradient(top, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("../img/pm-bg.jpg");
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("../img/pm-bg.jpg");
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: cover;
+    background-attachment: fixed; }
   header .login {
     position: absolute;
     top: 0;

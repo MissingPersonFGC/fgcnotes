@@ -191,6 +191,22 @@ header {
     @include header-bg('../img/ec-bg.jpg');
   }
 
+  &.pt-head {
+    @include header-bg('../img/pt-bg.jpg');
+  }
+
+  &.dbfz-head {
+    @include header-bg('../img/dbfz-bg.jpg');
+  }
+
+  &.vp-head {
+    @include header-bg('../img/vp-bg.jpg');
+  }
+
+  &.pm-head {
+    @include header-bg('../img/pm-bg.jpg');
+  }
+
   .login {
     position: absolute;
     top: 0;

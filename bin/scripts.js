@@ -1,5 +1,5 @@
 // Testing remote input of character names. Using sfv.html to attempt.
-const characterValue [
+const characterValue = [
   {
     name: `Abigail`,
     value: `abigail`

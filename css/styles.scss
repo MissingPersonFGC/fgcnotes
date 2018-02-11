@@ -151,6 +151,38 @@ header {
     @include header-bg('../img/kr-bg.jpg');
   }
 
+  &.vf5-head {
+    @include header-bg('../img/vf5-bg.jpg');
+  }
+
+  &.doa5-head {
+    @include header-bg('../img/doa5-bg.jpg');
+  }
+
+  &.sc2-head {
+    @include header-bg('../img/sc2-bg.jpg');
+  }
+
+  &.scv-head {
+    @include header-bg('../img/scv-bg.jpg');
+  }
+
+  &.ab-head {
+    @include header-bg('../img/ab-bg.jpg');
+  }
+
+  &.ke-head {
+    @include header-bg('../img/ke-bg.jpg');
+  }
+
+  &.npb-head {
+    @include header-bg('../img/npb-bg.jpg');
+  }
+
+  &.dk-head {
+    @include header-bg('../img/dk-bg.jpg');
+  }
+
   .login {
     position: absolute;
     top: 0;

@@ -183,6 +183,14 @@ header {
     @include header-bg('../img/dk-bg.jpg');
   }
 
+  &.rt-head {
+    @include header-bg('../img/rt-bg.jpg');
+  }
+
+  &.ec-head {
+    @include header-bg('../img/ec-bg.jpg');
+  }
+
   .login {
     position: absolute;
     top: 0;

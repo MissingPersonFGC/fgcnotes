@@ -1,145 +1,18 @@
-// Testing remote input of character names. Using sfv.html to attempt.
-const characterValue = [
-  {
-    name: `Abigail`,
-    value: `abigail`
-  },
-  {
-    name: `Akuma`,
-    value: `akuma`
-  },
-  {
-    name: `Balrog`,
-    value: `boxer`
-  },
-  {
-    name: `Birdie`,
-    value: `birdie`
-  },
-  {
-    name: `Blanka`,
-    value: `blanka`
-  },
-  {
-    name: `Alex`,
-    value: `alex`
-  },
-  {
-    name: `Cammy`,
-    value: `cammy`
-  },
-  {
-    name: `Chun-Li`,
-    value: `chun`
-  },
-  {
-    name: `Cody`,
-    value: `cody`
-  },
-  {
-    name: `Dhalsim`,
-    value: `dhalsim`
-  },
-  {
-    name: `Ed`,
-    value: `ed`
-  },
-  {
-    name: `F.A.N.G`,
-    value: `fang`
-  },
-  {
-    name: `Falke`,
-    value: `falke`
-  },
-  {
-    name: `G`,
-    value: `g`
-  },
-  {
-    name: `Guile`,
-    value: `guile`
-  },
-  {
-    name: `Ibuki`,
-    value: `ibuki`
-  },
-  {
-    name: `Juri`,
-    value: `juri`
-  },
-  {
-    name: `Karin`,
-    value: `karin`
-  },
-  {
-    name: `Ken`,
-    value: `ken`
-  },
-  {
-    name: `Kolin`,
-    value: `kolin`
-  },
-  {
-    name: `Laura`,
-    value: `laura`
-  },
-  {
-    name: `M. Bison`,
-    value: `dictator`
-  },
-  {
-    name: `Menat`,
-    value: `menat`
-  },
-  {
-    name: `Nash`,
-    value: `nash`
-  },
-  {
-    name: `Necalli`,
-    value: `necalli`
-  },
-  {
-    name: `R. Mika`,
-    value: `mika`
-  },
-  {
-    name: `Rashid`,
-    value: `rashid`
-  },
-  {
-    name: `Ryu`,
-    value: `ryu`
-  },
-  {
-    name: `Sagat`,
-    value: `sagat`
-  },
-  {
-    name: `Sakura`,
-    value: `sakura`
-  },
-  {
-    name: `Urien`,
-    value: `urien`
-  },
-  {
-    name: `Vega`,
-    value: `claw`
-  },
-  {
-    name: `Zangief`,
-    value: `zangief`
-  },
-  {
-    name: `Zeku`,
-    value: `zeku`
+// Access Google Sheet;
+
+var publicSpreadsheetUrl = 'https://docs.google.com/spreadsheets/d/19HR6knMWzdqtdhWucRAa3uXQfLsOO3SuUQE_MPL-LFE/pubhtml';
+
+  function init() {
+    Tabletop.init( { key: publicSpreadsheetUrl,
+                     callback: showInfo,
+                     simpleSheet: true } )
   }
-]
 
+  function showInfo(data, tabletop) {
+    console.log(data);
+  }
 
-//Attempt to parse name and value into character lists for SFV.
+  window.addEventListener('DOMContentLoaded', init)
 
 $(document).ready(function(){
   // Add smooth scrolling to all links

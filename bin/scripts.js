@@ -1,18 +1,19 @@
 // Access Google Sheet;
 
-var publicSpreadsheetUrl = 'https://docs.google.com/spreadsheets/d/19HR6knMWzdqtdhWucRAa3uXQfLsOO3SuUQE_MPL-LFE/pubhtml';
+const publicSpreadsheetUrl = 'https://docs.google.com/spreadsheets/d/19HR6knMWzdqtdhWucRAa3uXQfLsOO3SuUQE_MPL-LFE/pubhtml';
 
   function init() {
     Tabletop.init( { key: publicSpreadsheetUrl,
                      callback: showInfo,
-                     simpleSheet: true } )
+                     simpleSheet: false,
+                      debug: true} )
   }
 
   function showInfo(data, tabletop) {
     console.log(data);
   }
 
-  window.addEventListener('DOMContentLoaded', init)
+  window.addEventListener('DOMContentLoaded', init);
 
 $(document).ready(function(){
   // Add smooth scrolling to all links

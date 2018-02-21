@@ -1,2 +1,10 @@
-
+node_modules
 img/joystick_318-39930\.jpg
+
+public/styles/\.DS_Store
+
+public/scripts/\.DS_Store
+
+public/\.DS_Store
+
+prepros-6\.config

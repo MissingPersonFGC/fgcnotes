@@ -1,7 +1,7 @@
 TO DO:
 
-Databasing of matchups
-Databasing of character list, reduce redundancy
+Databasing of matchups -- Done 3/2/2018
+Databasing of character list, reduce redundancy -- Done 3/2/2018
 Create page to add notes
 Create logins
 Add match results feature to log your match results, and post-match notes
@@ -10,4 +10,4 @@ Localisation (Priority list: Japanese, Korean, Chinese, French, Spanish)
 
 Possible:
 
-Expand beyond the FGC, add in MOBAs (DOTA 2, LoL, HoTS) and Overwatch perhaps?
+Expand beyond the FGC, add in MOBAs (DOTA 2, LoL, HoTS) and Overwatch perhaps? --Done

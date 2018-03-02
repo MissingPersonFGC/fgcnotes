@@ -10,8 +10,6 @@ if (document.location.href.match(/[^\/]+$/) != null) {
   fileName.pop();
 
   fileName = fileName[0].toString();
-
-  console.log(fileName);
 }
 
 // Assign empty variables to hold the entire database outside of Tabletop.
@@ -21,6 +19,8 @@ var fgcDB = null;
 var characterList = [];
 
 var gameNotes = [];
+
+var gameList = [];
 
 // Access Google Sheet;
 
@@ -33,8 +33,6 @@ function init() {
 }
 
 function showInfo(data, tabletop) {
-  console.log(data);
-
   // Return database outside of Tabletop.
   fgcDB = data;
 
@@ -54,11 +52,21 @@ function showInfo(data, tabletop) {
     }
   }
 
+  // Pull the game list into its own array.
+  for (var _i2 = 0; _i2 < fgcDB.gameData.elements.length; _i2 = _i2 + 1) {
+    gameList.push(fgcDB.gameData.elements[_i2]);
+  }
+
   // Sorting the character select drop downs by the array
   $(document).ready(function () {
-    for (var _i2 = 0; _i2 < characterList.length; _i2 = _i2 + 1) {
-      $('select.your-character').append('<option value="' + characterList[_i2].characterShorthand + '">' + characterList[_i2].characterName + '</option>');
-      $('select.opp-character').append('<option value="' + characterList[_i2].characterShorthand + '">' + characterList[_i2].characterName + '</option>');
+    for (var _i3 = 0; _i3 < characterList.length; _i3 = _i3 + 1) {
+      $('select.your-character').append('<option value="' + characterList[_i3].characterShorthand + '">' + characterList[_i3].characterName + '</option>');
+      $('select.opp-character').append('<option value="' + characterList[_i3].characterShorthand + '">' + characterList[_i3].characterName + '</option>');
+    }
+
+    // Append game list into drop down box on index.
+    for (var _i4 = 0; _i4 < gameList.length; _i4 = _i4 + 1) {
+      $('select.your-game').append('<option value=' + gameList[_i4].gameShorthand + '>' + gameList[_i4].gameName + '</option>');
     }
   });
 }
@@ -149,24 +157,3 @@ $(document).ready(function () {
     });
   });
 });
-
-//GUILE'S THEME GOES WITH EVERYTHING!
-var kkeys = [],
-    konami = "38,38,40,40,37,39,37,39,66,65";
-
-$(document).keydown(function (e) {
-
-  kkeys.push(e.keyCode);
-
-  if (kkeys.toString().indexOf(konami) >= 0) {
-
-    $(document).unbind('keydown', arguments.callee);
-
-    var snd = new Audio("../../media/guilestheme.mp3");
-    snd.play();
-    $('body').addClass('konami');
-    $('body').trigger('konami.codeFired');
-  }
-});
-
-// Move list items that are shown to top of the page

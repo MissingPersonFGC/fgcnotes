@@ -8,8 +8,6 @@ if (document.location.href.match(/[^\/]+$/) != null) {
   fileName.pop();
 
   fileName = fileName[0].toString();
-
-  console.log(fileName);
 }
 
 // Assign empty variables to hold the entire database outside of Tabletop.
@@ -19,6 +17,8 @@ let fgcDB = null;
 const characterList = [];
 
 const gameNotes = [];
+
+const gameList = [];
 
 
 // Access Google Sheet;
@@ -32,8 +32,6 @@ const publicSpreadsheetUrl = 'https://docs.google.com/spreadsheets/d/19HR6knMWzd
   }
 
   function showInfo(data, tabletop) {
-    console.log(data);
-
     // Return database outside of Tabletop.
     fgcDB = data;
 
@@ -53,11 +51,21 @@ const publicSpreadsheetUrl = 'https://docs.google.com/spreadsheets/d/19HR6knMWzd
       }
     }
 
+    // Pull the game list into its own array.
+    for (let i = 0; i < fgcDB.gameData.elements.length; i = i + 1) {
+      gameList.push(fgcDB.gameData.elements[i]);
+    }
+
     // Sorting the character select drop downs by the array
     $(document).ready(function(){
       for (let i = 0; i < characterList.length; i = i + 1) {
         $(`select.your-character`).append(`<option value="${characterList[i].characterShorthand}">${characterList[i].characterName}</option>`);
         $(`select.opp-character`).append(`<option value="${characterList[i].characterShorthand}">${characterList[i].characterName}</option>`);
+      }
+
+      // Append game list into drop down box on index.
+      for (let i = 0; i < gameList.length; i = i + 1) {
+        $(`select.your-game`).append(`<option value=${gameList[i].gameShorthand}>${gameList[i].gameName}</option>`);
       }
     });
   }
@@ -148,24 +156,3 @@ $(document).ready(function() {
     });
   });
 });
-
-
-//GUILE'S THEME GOES WITH EVERYTHING!
-var kkeys = [], konami = "38,38,40,40,37,39,37,39,66,65";
-
-$(document).keydown(function(e) {
-
-  kkeys.push( e.keyCode );
-
-  if ( kkeys.toString().indexOf( konami ) >= 0 ) {
-
-    $(document).unbind('keydown',arguments.callee);
-
-    var snd = new Audio("../../media/guilestheme.mp3");
-    snd.play();
-    $('body').addClass('konami');
-    $('body').trigger('konami.codeFired');
-  }
-});
-
-// Move list items that are shown to top of the page

@@ -269,11 +269,11 @@ header {
 
 main {
   padding-bottom: 50px; }
-  main .selection-head, main .char-select, main .game-select, main .game-list {
+  main .selection-head, main .char-select, main .game-select {
     width: 80%;
     max-width: 1250px;
     margin: 0 auto; }
-    main .selection-head h2, main .char-select h2, main .game-select h2, main .game-list h2 {
+    main .selection-head h2, main .char-select h2, main .game-select h2 {
       font-size: 1.875rem; }
   main .char-select, main .game-select {
     text-align: center; }
@@ -299,77 +299,6 @@ main {
       font-family: "Falling Sky", sans-serif; }
     main .char-select .opp-character, main .game-select .opp-character {
       margin-left: 10px; }
-  main .game-list {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center; }
-    main .game-list .disc-container {
-      margin: 20px;
-      width: 200px;
-      height: 200px;
-      border-radius: 200px;
-      position: relative;
-      -webkit-perspective: 1000;
-              perspective: 1000; }
-      main .game-list .disc-container:hover .game-disc {
-        -webkit-transform: rotateY(180deg);
-                transform: rotateY(180deg); }
-      main .game-list .disc-container .game-disc {
-        -webkit-transition: 0.6s ease;
-        transition: 0.6s ease;
-        -webkit-transform-style: preserve-3d;
-                transform-style: preserve-3d;
-        position: relative;
-        border-radius: 50%; }
-        main .game-list .disc-container .game-disc .game, main .game-list .disc-container .game-disc .description {
-          -webkit-backface-visibility: hidden;
-                  backface-visibility: hidden;
-          position: absolute;
-          top: 0;
-          left: 0;
-          display: table;
-          width: 200px;
-          height: 200px;
-          border-radius: 50%;
-          text-align: center;
-          background: #93b1c6; }
-          main .game-list .disc-container .game-disc .game img, main .game-list .disc-container .game-disc .game p, main .game-list .disc-container .game-disc .description img, main .game-list .disc-container .game-disc .description p {
-            vertical-align: middle;
-            display: table-cell;
-            width: 100%; }
-          main .game-list .disc-container .game-disc .game img, main .game-list .disc-container .game-disc .description img {
-            display: inline-block;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            -webkit-transform: translate(-50%, -50%);
-                    transform: translate(-50%, -50%); }
-          main .game-list .disc-container .game-disc .game p, main .game-list .disc-container .game-disc .description p {
-            font-size: 1.125rem; }
-          main .game-list .disc-container .game-disc .game .ki, main .game-list .disc-container .game-disc .description .ki {
-            width: 70%; }
-          main .game-list .disc-container .game-disc .game .slight-smaller, main .game-list .disc-container .game-disc .description .slight-smaller {
-            width: 90%; }
-        main .game-list .disc-container .game-disc .game {
-          -webkit-transform: rotateY(0deg);
-                  transform: rotateY(0deg); }
-        main .game-list .disc-container .game-disc .description {
-          color: white;
-          -webkit-transform: rotateY(180deg);
-                  transform: rotateY(180deg);
-          padding: 20px; }
 
 .char-notes {
   width: 80%;
@@ -456,111 +385,3 @@ footer {
     max-width: 1250px;
     margin: 0 auto;
     padding: 0; }
-
-@media (max-width: 750px) {
-  header .login {
-    right: 4%; }
-  main .selection-head, main .char-select, main .game-select, main .game-list {
-    width: 100%; }
-  main .game-list {
-    width: 100%;
-    margin: 0 auto;
-    padding: 0; } }
-
-@media (max-width: 560px) {
-  header .login a {
-    padding: 7px 10px;
-    text-transform: uppercase;
-    text-decoration: none;
-    display: inline-block;
-    color: #f5f5f5;
-    background: #ff7148;
-    font-family: "American Captain", sans-serif;
-    font-size: 0.8rem;
-    -webkit-transition: background 0.5s, border-radius 0.5s;
-    transition: background 0.5s, border-radius 0.5s;
-    margin-right: 10px;
-    margin-top: 10px;
-    margin-top: 3px;
-    margin-right: 3px; }
-    header .login a:hover {
-      background: #ff4915;
-      border-radius: 5px; }
-  header .login div input {
-    font-size: 0.9rem; } }
-
-@media (max-width: 480px) {
-  header {
-    height: 33vh; }
-    header .login {
-      right: 3%; }
-      header .login a {
-        padding: 7px 10px;
-        text-transform: uppercase;
-        text-decoration: none;
-        display: inline-block;
-        color: #f5f5f5;
-        background: #ff7148;
-        font-family: "American Captain", sans-serif;
-        font-size: 0.8rem;
-        -webkit-transition: background 0.5s, border-radius 0.5s;
-        transition: background 0.5s, border-radius 0.5s;
-        margin-right: 10px;
-        margin-top: 10px;
-        margin-top: 3px;
-        margin-right: 3px; }
-        header .login a:hover {
-          background: #ff4915;
-          border-radius: 5px; }
-      header .login div input {
-        width: 60px;
-        font-size: 0.8rem; }
-    header .wrapper {
-      height: 33vh; }
-      header .wrapper h1 {
-        font-size: 1.5rem; }
-  main .selection-head h2, main .char-select h2, main .game-select h2, main .game-list h2 {
-    font-size: 1.1rem; }
-  main section select {
-    font-size: 0.8rem; }
-  main .char-select a {
-    padding: 7px 10px;
-    text-transform: uppercase;
-    text-decoration: none;
-    display: inline-block;
-    color: #f5f5f5;
-    background: #93b1c6;
-    font-family: "Falling Sky", sans-serif;
-    font-size: 0.8rem;
-    -webkit-transition: background 0.5s, border-radius 0.5s;
-    transition: background 0.5s, border-radius 0.5s;
-    margin-right: 10px;
-    margin-top: 10px; }
-    main .char-select a:hover {
-      background: #7299b4;
-      border-radius: 5px; }
-  main .char-notes .wrapper a {
-    padding: 7px 10px;
-    text-transform: uppercase;
-    text-decoration: none;
-    display: inline-block;
-    color: #f5f5f5;
-    background: #93b1c6;
-    font-family: "Falling Sky", sans-serif;
-    font-size: 0.8rem;
-    -webkit-transition: background 0.5s, border-radius 0.5s;
-    transition: background 0.5s, border-radius 0.5s;
-    margin-right: 10px;
-    margin-top: 10px; }
-    main .char-notes .wrapper a:hover {
-      background: #7299b4;
-      border-radius: 5px; }
-  .game-list .disc-container {
-    width: 100px;
-    height: 100px;
-    border-radius: 100px; }
-    .game-list .disc-container .game-disc .game, .game-list .disc-container .game-disc .description {
-      width: 100px;
-      height: 100px; }
-      .game-list .disc-container .game-disc .game p, .game-list .disc-container .game-disc .description p {
-        font-size: 1rem; } }

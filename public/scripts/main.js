@@ -4,14 +4,6 @@
 
 var fileName = null;
 
-if (document.location.href.match(/[^\/]+$/) != null) {
-  fileName = document.location.href.match(/[^\/]+$/)[0].split('.html');
-
-  fileName.pop();
-
-  fileName = fileName[0].toString();
-}
-
 // Assign empty variables to hold the entire database outside of Tabletop.
 
 var fgcDB = null;
@@ -98,6 +90,10 @@ $(document).ready(function () {
 
     $('select.your-character').empty();
     $('select.opp-character').empty();
+
+    // Also clear the notes list when the game changes.
+
+    $('ul').empty();
 
     // Iterate through the character data array and find the characters in the selected game.
     for (var i = 0; i < fgcDB.characterData.elements.length; i = i + 1) {

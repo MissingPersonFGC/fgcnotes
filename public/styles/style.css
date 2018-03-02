@@ -556,15 +556,15 @@ header {
 
 main {
   padding-bottom: 50px; }
-  main .selection-head, main .char-select, main .game-list {
+  main .selection-head, main .char-select, main .game-select, main .game-list {
     width: 80%;
     max-width: 1250px;
     margin: 0 auto; }
-    main .selection-head h2, main .char-select h2, main .game-list h2 {
+    main .selection-head h2, main .char-select h2, main .game-select h2, main .game-list h2 {
       font-size: 1.875rem; }
-  main .char-select {
+  main .char-select, main .game-select {
     text-align: center; }
-    main .char-select a {
+    main .char-select a, main .game-select a {
       padding: 10px 30px;
       text-transform: uppercase;
       text-decoration: none;
@@ -574,17 +574,17 @@ main {
       font-family: "Falling Sky", sans-serif;
       -webkit-transition: background 0.5s, border-radius 0.5s;
       transition: background 0.5s, border-radius 0.5s; }
-      main .char-select a:hover {
+      main .char-select a:hover, main .game-select a:hover {
         background: #7299b4;
         border-radius: 5px; }
-    main .char-select select {
+    main .char-select select, main .game-select select {
       background: #93b1c6;
       border: 0;
       color: #f5f5f5;
       padding: 5px;
       margin-right: 10px;
       font-family: "Falling Sky", sans-serif; }
-    main .char-select .opp-character {
+    main .char-select .opp-character, main .game-select .opp-character {
       margin-left: 10px; }
   main .game-list {
     display: -webkit-box;
@@ -747,7 +747,7 @@ footer {
 @media (max-width: 750px) {
   header .login {
     right: 4%; }
-  main .selection-head, main .char-select, main .game-list {
+  main .selection-head, main .char-select, main .game-select, main .game-list {
     width: 100%; }
   main .game-list {
     width: 100%;
@@ -806,7 +806,7 @@ footer {
       height: 33vh; }
       header .wrapper h1 {
         font-size: 1.5rem; }
-  main .selection-head h2, main .char-select h2, main .game-list h2 {
+  main .selection-head h2, main .char-select h2, main .game-select h2, main .game-list h2 {
     font-size: 1.1rem; }
   main section select {
     font-size: 0.8rem; }

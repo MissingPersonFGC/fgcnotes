@@ -277,7 +277,7 @@ main {
     }
   }
 
-  .char-select {
+  .char-select, .game-select {
     @extend .selection-head;
     text-align: center;
 

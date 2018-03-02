@@ -3,6 +3,7 @@ TO DO:
 Databasing of matchups -- Done 3/2/2018
 Databasing of character list, reduce redundancy -- Done 3/2/2018
 Create page to add notes
+Check which games have notes populated and only display those games in the selection list.
 Create logins
 Add match results feature to log your match results, and post-match notes
 Add matchup records, which details your aggretated win/loss ratio and matchup-based ratios per game

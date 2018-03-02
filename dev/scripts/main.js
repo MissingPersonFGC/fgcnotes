@@ -52,6 +52,14 @@ const publicSpreadsheetUrl = 'https://docs.google.com/spreadsheets/d/19HR6knMWzd
         gameNotes.push(fgcDB.gameNotes.elements[i]);
       }
     }
+
+    // Sorting the character select drop downs by the array
+    $(document).ready(function(){
+      for (let i = 0; i < characterList.length; i = i + 1) {
+        $(`select.your-character`).append(`<option value="${characterList[i].characterShorthand}">${characterList[i].characterName}</option>`);
+        $(`select.opp-character`).append(`<option value="${characterList[i].characterShorthand}">${characterList[i].characterName}</option>`);
+      }
+    });
   }
 
   window.addEventListener('DOMContentLoaded', init);
@@ -84,14 +92,27 @@ $(document).ready(function(){
 // Show notes pertaining to character matchups
 
 $(document).ready(function() {
+
   $('.show-notes').click(function(e) {
     e.preventDefault();
     $('.show').removeClass('show');
+
+    // Remove all the list items before changing characters, else they will start stacking. If you click the same character matcup more than once, it would create redundant list items otherwise.
+    $(`ul`).empty();
+
+    // Grab the characters selected from the drop downs.
     const yourChar = $("select[name='your-character'] option:selected").val();
     const oppChar = $("select[name='opp-character'] option:selected").val();
-    const charNote = $('.' + yourChar + '-v-' + oppChar);
+
+    // Parse the notes for the selected matchup.
+    for (let i = 0; i < gameNotes.length; i = i + 1) {
+      if (yourChar === gameNotes[i].yourCharacter && oppChar === gameNotes[i].opponentCharacter) {
+        // Create the list of notes.
+        $(`.notes ul`).append(`<li class="${yourChar}-v-${oppChar} ${gameNotes[i].noteType}">${gameNotes[i].note}</li>`);
+        $(`li.${yourChar}-v-${oppChar}`).addClass(`show`);
+      }
+    }
     $('.char-notes .wrapper').addClass('show');
-    $(charNote).addClass('show');
 
     // Force visible list items to top of list
     $('ul').each(function() {
@@ -126,24 +147,6 @@ $(document).ready(function() {
       });
     });
   });
-});
-
-// List box sorting
-
-$(document).ready(function(){
-  $(".your-character option").sort(dec_sort).appendTo(".your-character");
-  $(".opp-character option").sort(dec_sort).appendTo(".opp-character");
-  $(".game option").sort(dec_sort).appendTo(".game");
-  $(".opponent option").sort(dec_sort).appendTo(".opponent");
-  $(".note-filter option").sort(dec_sort).appendTo(".note-filter");
-
-  function asc_sort(a, b){
-    return ($(b).text()) < ($(a).text()) ? 1 : -1;
-  }
-
-  function dec_sort(a, b){
-    return ($(b).text()) > ($(a).text()) ? 1 : -1;
-  }
 });
 
 

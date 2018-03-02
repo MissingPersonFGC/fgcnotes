@@ -36,37 +36,17 @@ function showInfo(data, tabletop) {
   // Return database outside of Tabletop.
   fgcDB = data;
 
-  // Iterate through the character data array and find the characters in the selected game.
-  for (var i = 0; i < fgcDB.characterData.elements.length; i = i + 1) {
-    if (fgcDB.characterData.elements[i].gameShorthand === fileName) {
-      // Return the character objects to their own array. This makes it easier to create the character list.
-      characterList.push(fgcDB.characterData.elements[i]);
-    }
-  }
-
-  // Iterate through the game notes to find all notes that are relevant to the selected game.
-  for (var _i = 0; _i < fgcDB.gameNotes.elements.length; _i = _i + 1) {
-    if (fgcDB.gameNotes.elements[_i].gameShorthand === fileName) {
-      // Return the notes to their own array.
-      gameNotes.push(fgcDB.gameNotes.elements[_i]);
-    }
-  }
-
   // Pull the game list into its own array.
-  for (var _i2 = 0; _i2 < fgcDB.gameData.elements.length; _i2 = _i2 + 1) {
-    gameList.push(fgcDB.gameData.elements[_i2]);
+  for (var i = 0; i < fgcDB.gameData.elements.length; i = i + 1) {
+    gameList.push(fgcDB.gameData.elements[i]);
   }
 
   // Sorting the character select drop downs by the array
   $(document).ready(function () {
-    for (var _i3 = 0; _i3 < characterList.length; _i3 = _i3 + 1) {
-      $('select.your-character').append('<option value="' + characterList[_i3].characterShorthand + '">' + characterList[_i3].characterName + '</option>');
-      $('select.opp-character').append('<option value="' + characterList[_i3].characterShorthand + '">' + characterList[_i3].characterName + '</option>');
-    }
 
     // Append game list into drop down box on index.
-    for (var _i4 = 0; _i4 < gameList.length; _i4 = _i4 + 1) {
-      $('select.your-game').append('<option value=' + gameList[_i4].gameShorthand + '>' + gameList[_i4].gameName + '</option>');
+    for (var _i = 0; _i < gameList.length; _i = _i + 1) {
+      $('select.your-game').append('<option value=' + gameList[_i].gameShorthand + '>' + gameList[_i].gameName + '</option>');
     }
   });
 }
@@ -101,6 +81,44 @@ $(document).ready(function () {
 // Show notes pertaining to character matchups
 
 $(document).ready(function () {
+
+  // Change the fileName to match the selected option in the game list.
+
+  $('select.your-game').change(function () {
+    fileName = $('option:selected').val();
+
+    // Clear the arrays just in case the game changed.
+    characterList = [];
+    gameNotes = [];
+
+    // Clear the character select lists.
+
+    $('select.your-character').empty();
+    $('select.opp-character').empty();
+
+    // Iterate through the character data array and find the characters in the selected game.
+    for (var i = 0; i < fgcDB.characterData.elements.length; i = i + 1) {
+      if (fgcDB.characterData.elements[i].gameShorthand === fileName) {
+        // Return the character objects to their own array. This makes it easier to create the character list.
+        characterList.push(fgcDB.characterData.elements[i]);
+      }
+    }
+
+    // Iterate through the game notes to find all notes that are relevant to the selected game.
+    for (var _i2 = 0; _i2 < fgcDB.gameNotes.elements.length; _i2 = _i2 + 1) {
+      if (fgcDB.gameNotes.elements[_i2].gameShorthand === fileName) {
+        // Return the notes to their own array.
+        gameNotes.push(fgcDB.gameNotes.elements[_i2]);
+      }
+    }
+
+    // Append the character list to the drop downs.
+
+    for (var _i3 = 0; _i3 < characterList.length; _i3 = _i3 + 1) {
+      $('select.your-character').append('<option value="' + characterList[_i3].characterShorthand + '">' + characterList[_i3].characterName + '</option>');
+      $('select.opp-character').append('<option value="' + characterList[_i3].characterShorthand + '">' + characterList[_i3].characterName + '</option>');
+    }
+  });
 
   $('.show-notes').click(function (e) {
     e.preventDefault();

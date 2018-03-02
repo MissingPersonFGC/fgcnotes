@@ -14,11 +14,11 @@ if (document.location.href.match(/[^\/]+$/) != null) {
 
 let fgcDB = null;
 
-const characterList = [];
+let characterList = [];
 
-const gameNotes = [];
+let gameNotes = [];
 
-const gameList = [];
+let gameList = [];
 
 
 // Access Google Sheet;
@@ -35,22 +35,6 @@ const publicSpreadsheetUrl = 'https://docs.google.com/spreadsheets/d/19HR6knMWzd
     // Return database outside of Tabletop.
     fgcDB = data;
 
-    // Iterate through the character data array and find the characters in the selected game.
-    for (let i = 0; i < fgcDB.characterData.elements.length; i = i + 1) {
-      if (fgcDB.characterData.elements[i].gameShorthand === fileName) {
-        // Return the character objects to their own array. This makes it easier to create the character list.
-        characterList.push(fgcDB.characterData.elements[i]);
-      }
-    }
-
-    // Iterate through the game notes to find all notes that are relevant to the selected game.
-    for (let i = 0; i < fgcDB.gameNotes.elements.length; i = i + 1) {
-      if (fgcDB.gameNotes.elements[i].gameShorthand === fileName) {
-        // Return the notes to their own array.
-        gameNotes.push(fgcDB.gameNotes.elements[i]);
-      }
-    }
-
     // Pull the game list into its own array.
     for (let i = 0; i < fgcDB.gameData.elements.length; i = i + 1) {
       gameList.push(fgcDB.gameData.elements[i]);
@@ -58,10 +42,6 @@ const publicSpreadsheetUrl = 'https://docs.google.com/spreadsheets/d/19HR6knMWzd
 
     // Sorting the character select drop downs by the array
     $(document).ready(function(){
-      for (let i = 0; i < characterList.length; i = i + 1) {
-        $(`select.your-character`).append(`<option value="${characterList[i].characterShorthand}">${characterList[i].characterName}</option>`);
-        $(`select.opp-character`).append(`<option value="${characterList[i].characterShorthand}">${characterList[i].characterName}</option>`);
-      }
 
       // Append game list into drop down box on index.
       for (let i = 0; i < gameList.length; i = i + 1) {
@@ -100,6 +80,44 @@ $(document).ready(function(){
 // Show notes pertaining to character matchups
 
 $(document).ready(function() {
+
+  // Change the fileName to match the selected option in the game list.
+
+  $(`select.your-game`).change(function() {
+    fileName = $(`option:selected`).val();
+
+    // Clear the arrays just in case the game changed.
+    characterList = [];
+    gameNotes = [];
+
+    // Clear the character select lists.
+
+    $(`select.your-character`).empty();
+    $(`select.opp-character`).empty();
+
+    // Iterate through the character data array and find the characters in the selected game.
+    for (let i = 0; i < fgcDB.characterData.elements.length; i = i + 1) {
+      if (fgcDB.characterData.elements[i].gameShorthand === fileName) {
+        // Return the character objects to their own array. This makes it easier to create the character list.
+        characterList.push(fgcDB.characterData.elements[i]);
+      }
+    }
+
+    // Iterate through the game notes to find all notes that are relevant to the selected game.
+    for (let i = 0; i < fgcDB.gameNotes.elements.length; i = i + 1) {
+      if (fgcDB.gameNotes.elements[i].gameShorthand === fileName) {
+        // Return the notes to their own array.
+        gameNotes.push(fgcDB.gameNotes.elements[i]);
+      }
+    }
+
+    // Append the character list to the drop downs.
+
+    for (let i = 0; i < characterList.length; i = i + 1) {
+      $(`select.your-character`).append(`<option value="${characterList[i].characterShorthand}">${characterList[i].characterName}</option>`);
+      $(`select.opp-character`).append(`<option value="${characterList[i].characterShorthand}">${characterList[i].characterName}</option>`);
+    }
+  });
 
   $('.show-notes').click(function(e) {
     e.preventDefault();

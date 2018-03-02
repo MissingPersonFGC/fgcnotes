@@ -338,33 +338,9 @@ main {
 .char-notes ul li {
   list-style-type: none;
   list-style-position: outside; }
-  .char-notes ul li.punish::before {
-    content: 'Punish: ';
-    color: #ff7148; }
-  .char-notes ul li.anti-air::before {
-    content: 'Anti-air: ';
-    color: #ff7148; }
-  .char-notes ul li.air-to-air::before {
-    content: 'Air-to-air: ';
-    color: #ff7148; }
-  .char-notes ul li.evasion::before {
-    content: 'Evasion: ';
-    color: #ff7148; }
-  .char-notes ul li.frame-trap::before {
-    content: 'Frame Trap: ';
-    color: #ff7148; }
-  .char-notes ul li.option-select::before {
-    content: 'Option Select: ';
-    color: #ff7148; }
-  .char-notes ul li.mixup::before {
-    content: 'Mix-up: ';
-    color: #ff7148; }
-  .char-notes ul li.movement::before {
-    content: 'Movement: ';
-    color: #ff7148; }
-  .char-notes ul li.strategy::before {
-    content: 'Strategy: ';
-    color: #ff7148; }
+  .char-notes ul li .note-type {
+    color: #ff7148;
+    text-transform: capitalize; }
 
 .char-notes ul li.show, .char-notes .wrapper.show {
   visibility: visible;

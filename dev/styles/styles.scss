@@ -171,49 +171,9 @@ main {
   list-style-type: none;
   list-style-position: outside;
 
-  &.punish::before {
-    content: 'Punish: ';
+  .note-type {
     color: $color-accent;
-  }
-
-  &.anti-air::before {
-    content: 'Anti-air: ';
-    color: $color-accent;
-  }
-
-  &.air-to-air::before {
-    content: 'Air-to-air: ';
-    color: $color-accent;
-  }
-
-  &.evasion::before {
-    content: 'Evasion: ';
-    color: $color-accent;
-  }
-
-  &.frame-trap::before {
-    content: 'Frame Trap: ';
-    color: $color-accent;
-  }
-
-  &.option-select::before {
-    content: 'Option Select: ';
-    color: $color-accent;
-  }
-
-  &.mixup::before {
-    content: 'Mix-up: ';
-    color: $color-accent;
-  }
-
-  &.movement::before {
-    content: 'Movement: ';
-    color: $color-accent;
-  }
-
-  &.strategy::before {
-    content: 'Strategy: ';
-    color: $color-accent;
+    text-transform: capitalize;
   }
 }
 

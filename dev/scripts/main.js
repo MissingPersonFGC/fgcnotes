@@ -135,7 +135,7 @@ $(document).ready(function() {
     for (let i = 0; i < gameNotes.length; i = i + 1) {
       if (yourChar === gameNotes[i].yourCharacter && oppChar === gameNotes[i].opponentCharacter) {
         // Create the list of notes.
-        $(`.notes ul`).append(`<li class="${yourChar}-v-${oppChar} ${gameNotes[i].noteType}">${gameNotes[i].note}</li>`);
+        $(`.notes ul`).append(`<li class="${yourChar}-v-${oppChar} ${gameNotes[i].noteType}"><span class="note-type">${gameNotes[i].noteType}:</span> ${gameNotes[i].note}</li>`);
         $(`li.${yourChar}-v-${oppChar}`).addClass(`show`);
       }
     }

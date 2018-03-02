@@ -1,3 +1,26 @@
+// Parse the filename to match it to the game shorthand.
+
+let fileName = null;
+
+if (document.location.href.match(/[^\/]+$/) != null) {
+  fileName = document.location.href.match(/[^\/]+$/)[0].split(`.html`);
+
+  fileName.pop();
+
+  fileName = fileName[0].toString();
+
+  console.log(fileName);
+}
+
+// Assign empty variables to hold the entire database outside of Tabletop.
+
+let fgcDB = null;
+
+const characterList = [];
+
+const gameNotes = [];
+
+
 // Access Google Sheet;
 
 const publicSpreadsheetUrl = 'https://docs.google.com/spreadsheets/d/19HR6knMWzdqtdhWucRAa3uXQfLsOO3SuUQE_MPL-LFE/pubhtml';
@@ -5,12 +28,30 @@ const publicSpreadsheetUrl = 'https://docs.google.com/spreadsheets/d/19HR6knMWzd
   function init() {
     Tabletop.init( { key: publicSpreadsheetUrl,
                      callback: showInfo,
-                     simpleSheet: false,
-                      debug: true} )
+                     simpleSheet: false} )
   }
 
   function showInfo(data, tabletop) {
     console.log(data);
+
+    // Return database outside of Tabletop.
+    fgcDB = data;
+
+    // Iterate through the character data array and find the characters in the selected game.
+    for (let i = 0; i < fgcDB.characterData.elements.length; i = i + 1) {
+      if (fgcDB.characterData.elements[i].gameShorthand === fileName) {
+        // Return the character objects to their own array. This makes it easier to create the character list.
+        characterList.push(fgcDB.characterData.elements[i]);
+      }
+    }
+
+    // Iterate through the game notes to find all notes that are relevant to the selected game.
+    for (let i = 0; i < fgcDB.gameNotes.elements.length; i = i + 1) {
+      if (fgcDB.gameNotes.elements[i].gameShorthand === fileName) {
+        // Return the notes to their own array.
+        gameNotes.push(fgcDB.gameNotes.elements[i]);
+      }
+    }
   }
 
   window.addEventListener('DOMContentLoaded', init);
@@ -43,7 +84,8 @@ $(document).ready(function(){
 // Show notes pertaining to character matchups
 
 $(document).ready(function() {
-  $('.show-notes').click(function() {
+  $('.show-notes').click(function(e) {
+    e.preventDefault();
     $('.show').removeClass('show');
     const yourChar = $("select[name='your-character'] option:selected").val();
     const oppChar = $("select[name='opp-character'] option:selected").val();
@@ -57,7 +99,8 @@ $(document).ready(function() {
     });
 
     // Filter notes by type of note
-    $('.filter').click(function() {
+    $('.filter').click(function(e) {
+      e.preventDefault();
       $('li.show').removeClass('show');
       var filter = $("select[name='note-filter'] option:selected").val();
       var filterNote = $("." + filter);
@@ -69,7 +112,8 @@ $(document).ready(function() {
       });
 
       // Reset the filter
-      $('.show-all').click(function() {
+      $('.show-all').click(function(e) {
+        e.preventDefault();
         var yourChar = $("select[name='your-character'] option:selected").val();
         var oppChar = $("select[name='opp-character'] option:selected").val();
         var charNote = $('.' + yourChar + '-v-' + oppChar);

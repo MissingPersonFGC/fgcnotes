@@ -234,6 +234,21 @@ footer {
     max-width: 1250px;
     margin: 0 auto;
     padding: 0;
+    display: flex;
+    justify-content: space-between;
+
+    a {
+      color: $color-main;
+      display: inline-block;
+      font-size: 17.5px;
+      padding: 2px;
+      transition: background 0.5s, color 0.5s;
+
+      &:hover {
+        background: $color-main;
+        color: lighten($color-accent,10);
+      }
+    }
   }
 }
 

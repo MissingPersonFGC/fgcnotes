@@ -73,6 +73,17 @@ $(document).ready(function () {
 // Show notes pertaining to character matchups
 
 $(document).ready(function () {
+  $('.mobile-menu .icon').click(function (e) {
+    e.preventDefault();
+    $('.login').addClass('responsive');
+    $('.exit-button').addClass('responsive');
+  });
+
+  $('.exit-button .icon').click(function (e) {
+    e.preventDefault();
+    $('.login').removeClass('responsive');
+    $('.exit-button').removeClass('responsive');
+  });
 
   // Change the fileName to match the selected option in the game list.
 

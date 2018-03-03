@@ -12,12 +12,54 @@
       display: none;
       flex-direction: column;
       width: 95%;
-      height: 95vh;
-      justify-content: center;
+      justify-content: space-around;
       align-items: center;
       position: absolute;
-      top: 2.5%;
+      z-index: 9;
+      top: 12.5px;
       left: 2.5%;
+      border: 1px $color-accent solid;
+      border-radius: 5px;
+      padding-bottom: 75px;
+
+      .username, .password, .login-button, .register-button {
+        margin-right: 0;
+        padding-right: 0;
+        margin-bottom: 15px;
+
+        input {
+          border: 1px $color-accent solid;
+          border-radius: 3px;
+        }
+
+        a {
+          font-size: 0.8rem;
+          padding: 5px 15px;
+        }
+      }
+
+      .username {
+        margin-top: 50px;
+      }
+
+      .exit-button {
+        position: absolute;
+        top: 5px;
+        right: 5px;
+        z-index: 10;
+        width: auto;
+        height: auto;
+        display: inline-block;
+
+        a {
+          padding: 0;
+        }
+      }
+    }
+
+    .responsive {
+      display: block;
+      background: $color-main;
     }
 
     h3 {
@@ -111,7 +153,21 @@
 
     .wrapper {
       margin-left: 5%;
+      margin-right: 5%;
       width: 100%;
+
+      .copyright {
+        width: 50%;
+        text-align: left;
+      }
+
+      .social-media {
+        width: 50%;
+        a {
+          font-size: 0.6rem;
+          text-align: right;
+        }
+      }
     }
   }
 }

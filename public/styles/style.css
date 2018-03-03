@@ -228,7 +228,14 @@ header {
     padding-top: 20px;
     z-index: 10; }
     header .login .exit-button {
-      display: none; }
+      display: none;
+      font-size: 20px; }
+      header .login .exit-button a {
+        background: #f5f5f5;
+        color: #ff7148; }
+        header .login .exit-button a:hover {
+          background: #f5f5f5;
+          color: #ff7148; }
     header .login a {
       padding: 10px 30px;
       text-transform: uppercase;
@@ -381,9 +388,9 @@ footer {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between; }
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start; }
     footer .wrapper a {
       color: #f5f5f5;
       display: inline-block;
@@ -394,6 +401,13 @@ footer {
       footer .wrapper a:hover {
         background: #f5f5f5;
         color: #ff997b; }
+    footer .wrapper .copyright {
+      padding-top: 2.5px;
+      width: 50%; }
+    footer .wrapper .social-media {
+      width: 50%;
+      text-align: right;
+      padding-right: 7.5%; }
 
 @media (max-width: 414px) {
   header {
@@ -409,16 +423,43 @@ footer {
           -ms-flex-direction: column;
               flex-direction: column;
       width: 95%;
-      height: 95vh;
-      -webkit-box-pack: center;
-          -ms-flex-pack: center;
-              justify-content: center;
+      -ms-flex-pack: distribute;
+          justify-content: space-around;
       -webkit-box-align: center;
           -ms-flex-align: center;
               align-items: center;
       position: absolute;
-      top: 2.5%;
-      left: 2.5%; }
+      z-index: 9;
+      top: 12.5px;
+      left: 2.5%;
+      border: 1px #ff7148 solid;
+      border-radius: 5px;
+      padding-bottom: 75px; }
+      header .login .username, header .login .password, header .login .login-button, header .login .register-button {
+        margin-right: 0;
+        padding-right: 0;
+        margin-bottom: 15px; }
+        header .login .username input, header .login .password input, header .login .login-button input, header .login .register-button input {
+          border: 1px #ff7148 solid;
+          border-radius: 3px; }
+        header .login .username a, header .login .password a, header .login .login-button a, header .login .register-button a {
+          font-size: 0.8rem;
+          padding: 5px 15px; }
+      header .login .username {
+        margin-top: 50px; }
+      header .login .exit-button {
+        position: absolute;
+        top: 5px;
+        right: 5px;
+        z-index: 10;
+        width: auto;
+        height: auto;
+        display: inline-block; }
+        header .login .exit-button a {
+          padding: 0; }
+    header .responsive {
+      display: block;
+      background: #f5f5f5; }
     header h3 {
       display: block;
       position: absolute;
@@ -475,4 +516,13 @@ footer {
     font-size: 0.6rem; }
     footer .wrapper {
       margin-left: 5%;
-      width: 100%; } }
+      margin-right: 5%;
+      width: 100%; }
+      footer .wrapper .copyright {
+        width: 50%;
+        text-align: left; }
+      footer .wrapper .social-media {
+        width: 50%; }
+        footer .wrapper .social-media a {
+          font-size: 0.6rem;
+          text-align: right; } }

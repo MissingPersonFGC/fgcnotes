@@ -43,6 +43,18 @@ header {
     @include header-bg('../../img/background.jpg');
   }
 
+  h3 {
+    display: none;
+  }
+
+  .mobile-menu{
+    display: none;
+
+    a {
+      color: $color-main;
+    }
+  }
+
   .login {
     position: absolute;
     top: 0;
@@ -132,6 +144,10 @@ main {
 
     .opp-character {
       margin-left: 10px;
+    }
+
+    .button-break{
+      display: none;
     }
   }
 }

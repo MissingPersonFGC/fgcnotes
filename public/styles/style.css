@@ -208,6 +208,12 @@ header {
     background-position: bottom;
     background-size: cover;
     background-attachment: fixed; }
+  header h3 {
+    display: none; }
+  header .mobile-menu {
+    display: none; }
+    header .mobile-menu a {
+      color: #f5f5f5; }
   header .login {
     position: absolute;
     top: 0;
@@ -299,6 +305,8 @@ main {
       font-family: "Falling Sky", sans-serif; }
     main .char-select .opp-character, main .game-select .opp-character {
       margin-left: 10px; }
+    main .char-select .button-break, main .game-select .button-break {
+      display: none; }
 
 .char-notes {
   width: 80%;
@@ -361,3 +369,75 @@ footer {
     max-width: 1250px;
     margin: 0 auto;
     padding: 0; }
+
+@media (max-width: 414px) {
+  header {
+    height: auto;
+    width: 100%; }
+    header.main-page-head {
+      background: #ff997b;
+      z-index: 10; }
+    header .login {
+      display: none;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+          -ms-flex-direction: column;
+              flex-direction: column;
+      width: 95%;
+      height: 95vh; }
+    header h3 {
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 5%;
+      font-size: 25px;
+      color: #ff7148;
+      font-family: "American Captain", sans-serif;
+      margin-top: 14.5px;
+      text-align: left;
+      max-width: 80%;
+      letter-spacing: 2px; }
+    header .mobile-menu {
+      display: block;
+      position: absolute;
+      top: 13px;
+      right: 5%;
+      font-size: 20px; }
+      header .mobile-menu a {
+        color: #ff7148; }
+    header .wrapper {
+      display: none; }
+  main {
+    margin-top: 75px;
+    padding-bottom: 20px; }
+    main .selection-head h2, main .char-select h2, main .game-select h2 {
+      font-size: 1.2rem; }
+    main .char-select, main .game-select, main .char-notes {
+      font-size: 0.72rem; }
+      main .char-select select, main .game-select select, main .char-notes select {
+        font-size: 0.72rem;
+        margin-right: 5px;
+        padding: 1px; }
+      main .char-select .opp-character, main .game-select .opp-character, main .char-notes .opp-character {
+        margin-left: 5px;
+        margin-right: 0; }
+      main .char-select .note-filter, main .game-select .note-filter, main .char-notes .note-filter {
+        margin: 0; }
+      main .char-select a, main .game-select a, main .char-notes a {
+        margin-top: 10px;
+        margin-left: 5px;
+        padding: 5px 15px; }
+        main .char-select a:first-of-type, main .game-select a:first-of-type, main .char-notes a:first-of-type {
+          margin-left: 0px; }
+        main .char-select a.desktop, main .game-select a.desktop, main .char-notes a.desktop {
+          display: none; }
+      main .char-select .button-break, main .game-select .button-break, main .char-notes .button-break {
+        display: block; }
+        main .char-select .button-break a, main .game-select .button-break a, main .char-notes .button-break a {
+          padding: 5px 15px; }
+  footer {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-size: 0.6rem; }
+    footer .wrapper {
+      margin-left: 5%; } }

@@ -80,6 +80,7 @@ $(document).ready(function () {
     fileName = $('select.your-game option:selected').val();
 
     $('h1').text($('select.your-game option:selected').text());
+    $('header h3').text($('select.your-game option:selected').text());
     $('.main-page-head').css('background', 'linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url(\'../../img/' + fileName + '-bg.jpg\') bottom/cover no-repeat fixed');
 
     // Clear the arrays just in case the game changed.

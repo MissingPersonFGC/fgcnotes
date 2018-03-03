@@ -64,6 +64,10 @@ header {
     padding-top: 20px;
     z-index: 10;
 
+    .exit-button {
+      display: none;
+    }
+
     a {
       @include button($color-accent, $color-main, $font-second);
       letter-spacing: 2px;
@@ -146,7 +150,7 @@ main {
       margin-left: 10px;
     }
 
-    .button-break{
+    .button-break {
       display: none;
     }
   }
@@ -157,10 +161,14 @@ main {
   max-width: 1250px;
   margin: 0 auto;
 
+  .button-break {
+    display: none;
+  }
+
   ul {
     padding-left: 0;
   }
-  
+
   select {
     background: $color-secondary;
     border: 0;

@@ -227,6 +227,8 @@ header {
             flex-direction: row;
     padding-top: 20px;
     z-index: 10; }
+    header .login .exit-button {
+      display: none; }
     header .login a {
       padding: 10px 30px;
       text-transform: uppercase;
@@ -312,6 +314,8 @@ main {
   width: 80%;
   max-width: 1250px;
   margin: 0 auto; }
+  .char-notes .button-break {
+    display: none; }
   .char-notes ul {
     padding-left: 0; }
   .char-notes select {
@@ -386,7 +390,16 @@ footer {
           -ms-flex-direction: column;
               flex-direction: column;
       width: 95%;
-      height: 95vh; }
+      height: 95vh;
+      -webkit-box-pack: center;
+          -ms-flex-pack: center;
+              justify-content: center;
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center;
+      position: absolute;
+      top: 2.5%;
+      left: 2.5%; }
     header h3 {
       display: block;
       position: absolute;
@@ -442,4 +455,5 @@ footer {
     padding-bottom: 5px;
     font-size: 0.6rem; }
     footer .wrapper {
-      margin-left: 5%; } }
+      margin-left: 5%;
+      width: 100%; } }

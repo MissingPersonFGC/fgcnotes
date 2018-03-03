@@ -1,6 +1,6 @@
 'use strict';
 
-// Parse the filename to match it to the game shorthand.
+// Create the variable that will handle the game names across the notes.
 
 var fileName = null;
 

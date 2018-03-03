@@ -90,7 +90,9 @@ $(document).ready(function () {
     // Clear the character select lists.
 
     $('select.your-character').empty();
+    $('select.your-character').append('<option value="">--Your character--</option>');
     $('select.opp-character').empty();
+    $('select.opp-character').append('<option value="">--Their character--</option>');
 
     // Also clear the notes list when the game changes.
 

@@ -182,6 +182,11 @@ main {
     text-align: center;
     a {
       @include button($color-secondary, $color-main, $font-main);
+
+      &:last-of-type {
+        margin-left: 10px;
+        margin-right: 0;
+      }
     }
   }
 }

@@ -312,6 +312,8 @@ main {
   width: 80%;
   max-width: 1250px;
   margin: 0 auto; }
+  .char-notes ul {
+    padding-left: 0; }
   .char-notes select {
     background: #93b1c6;
     border: 0;

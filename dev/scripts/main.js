@@ -177,10 +177,14 @@ $(document).ready(function() {
     }
   });
 
+  // Launch the notes add form.
+
   $(`.add-notes-button-launch`).click(function(e) {
     e.preventDefault();
     $(`.add-notes-popup`).addClass(`make-visible`);
   });
+
+  // Close the notes add form when you click the exit button.
 
   $(`.add-exit-button a`).click(function(e) {
     e.preventDefault();
@@ -220,6 +224,16 @@ $('.add-notes-submit').on('click', function(e) {
 
   // Post to the game notes array so that the user doesn't have to refresh to view the new notes.
 
+  fgcDB.gameNotes.elements.push({
+    gameShorthand: $(`select[name=gameShorthand]`).val(),
+    note: $(`textarea[name=note]`).val(),
+    noteType: $(`select[name=noteType]`).val(),
+    opponentCharacter: $(`select[name=opponentCharacter]`).val(),
+    yourCharacter: $(`select[name=yourCharacter]`).val(),
+  });
+
+  // Send form results to Google Sheet.
+  
   var jqxhr = $.ajax({
 
     url: url,

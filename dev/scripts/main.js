@@ -177,11 +177,24 @@ $(document).ready(function() {
     }
   });
 
+  $(`.add-notes-button-launch`).click(function(e) {
+    e.preventDefault();
+    $(`.add-notes-popup`).addClass(`make-visible`);
+  });
+
+  $(`.add-exit-button a`).click(function(e) {
+    e.preventDefault();
+    $(`.add-notes-popup`).removeClass(`make-visible`);
+  });
 
 
+  // Define which form.
   var $form = $('.add-notes-form'),
 
+    // Point to the handler of the google sheet.
     url = 'https://script.google.com/macros/s/AKfycbwxexORxSnjRTnYh0ZRWA8QxsTVuHE4BiDb-oc6VP1dZXtHHU6q/exec'
+
+    // Creating necessary serialize function.
 
     $.fn.serializeObject = function() {
     	var o = {};
@@ -199,9 +212,13 @@ $(document).ready(function() {
     	return o;
     };
 
+// Submit form to Google sheet.
+
 $('.add-notes-submit').on('click', function(e) {
 
   e.preventDefault();
+
+  // Post to the game notes array so that the user doesn't have to refresh to view the new notes.
 
   var jqxhr = $.ajax({
 

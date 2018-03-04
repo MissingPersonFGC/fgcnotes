@@ -285,8 +285,32 @@ footer {
 
 .add-notes-popup {
   text-align: center;
-  width: 80%;
+  padding: 20px;
+  padding-top: 40px;
   margin: 0 auto;
+  display: none;
+  border: 1px $color-accent solid;
+  border-radius: 5px;
+
+  &.make-visible {
+    display: block;
+    z-index: 30;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background: $color-main;
+  }
+
+  .add-exit-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+
+    a {
+      color: $color-accent;
+    }
+  }
 
   h4 {
     text-align: left;

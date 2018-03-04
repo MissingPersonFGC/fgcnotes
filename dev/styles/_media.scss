@@ -21,6 +21,7 @@
       border: 1px $color-accent solid;
       border-radius: 5px;
       padding-bottom: 75px;
+      box-shadow: 0 0 15px #000;
 
       .username, .password, .login-button, .register-button {
         margin-right: 0;

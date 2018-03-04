@@ -413,7 +413,8 @@ footer {
   margin: 0 auto;
   display: none;
   border: 1px #ff7148 solid;
-  border-radius: 5px; }
+  border-radius: 5px;
+  box-shadow: 0 0 10px #000; }
   .add-notes-popup.make-visible {
     display: block;
     z-index: 30;

@@ -284,6 +284,24 @@ header {
 
 main {
   padding-bottom: 50px; }
+  main .notes-add {
+    text-align: center;
+    padding-top: 25px; }
+    main .notes-add a {
+      padding: 10px 30px;
+      text-transform: uppercase;
+      text-decoration: none;
+      display: inline-block;
+      color: #f5f5f5;
+      background: #ff7148;
+      font-family: "American Captain", sans-serif;
+      -webkit-transition: background 0.5s, border-radius 0.5s;
+      transition: background 0.5s, border-radius 0.5s;
+      font-size: 1.1rem;
+      letter-spacing: 2px; }
+      main .notes-add a:hover {
+        background: #ff4915;
+        border-radius: 5px; }
   main .selection-head, main .char-select, main .game-select {
     width: 80%;
     max-width: 1250px;

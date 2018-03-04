@@ -130,6 +130,17 @@ header {
 main {
   padding-bottom: 50px;
 
+  .notes-add {
+    text-align: center;
+    padding-top: 25px;
+
+    a {
+      @include button($color-accent, $color-main, $font-second);
+      font-size: 1.1rem;
+      letter-spacing: 2px;
+    }
+  }
+
   .selection-head {
     width: 80%;
     max-width: 1250px;
@@ -145,7 +156,7 @@ main {
     text-align: center;
 
     a {
-      @include button($color-secondary, $color-main, $font-main)
+      @include button($color-secondary, $color-main, $font-main);
     }
 
     select {
@@ -270,6 +281,10 @@ footer {
       padding-right: 7.5%;
     }
   }
+}
+
+.add-notes-popup {
+
 }
 
 @import 'media';

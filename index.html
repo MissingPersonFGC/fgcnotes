@@ -68,6 +68,10 @@
     </header>
 
     <main class="clearfix">
+      <section class="notes-add">
+        <a href="" class="add-notes-button-launch"><i class="fas fa-plus"></i> Add Notes</a>
+      </section>
+
       <section class="selection-head">
         <h2>Select your game:</h2>
       </section>
@@ -156,5 +160,50 @@
 
     <!-- Scripts -->
     <script src="public/scripts/main.js"></script>
+
+    <div class="add-notes-popup">
+      <form class="add-notes-form">
+        <div class="add-notes-game">
+          <h4>Game:</h4>
+          <select class="your-game" name="gameShorthand">
+
+          </select>
+        </div>
+        <div class="add-notes-matchup">
+          <h4>Matchup:</h4>
+          <select class="your-character" name="yourCharacter">
+
+          </select>
+
+          vs.
+
+          <select class="opp-character" name="opponentCharacter">
+
+          </select>
+        </div>
+        <div class="add-notes-type">
+          <h4>Type of Note:</h4>
+
+          <select class="note-type" name="noteType">
+            <option value="punish">Punish</option>
+            <option value="anti-air">Anti-air</option>
+            <option value="air-to-air">Air-to-air</option>
+            <option value="evasion">Evasion</option>
+            <option value="frame-trap">Frame Trap</option>
+            <option value="option-select">Option Select</option>
+            <option value="mixup">Mix-up</option>
+            <option value="movement">Movement</option>
+            <option value="strategy">Strategy</option>
+          </select>
+        </div>
+        <div class="add-notes-note">
+          <h4>Note:</h4>
+          <textarea name="note" rows="2" cols="50"></textarea>
+        </div>
+        <div class="add-notes-submit">
+          <button type="submit" class="notes-add-submit"><i class="far fa-plus-square"></i> Add</button>
+        </div>
+      </form>
+    </div>
   </body>
 </html>

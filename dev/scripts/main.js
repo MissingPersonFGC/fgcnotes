@@ -86,11 +86,11 @@ $(document).ready(function() {
 
   // Change the fileName to match the selected option in the game list.
 
-  $(`select.your-game`).change(function() {
-    fileName = $(`select.your-game option:selected`).val();
+  $(`main select.your-game`).change(function() {
+    fileName = $(`main select.your-game option:selected`).val();
 
-    $(`h1`).text($(`select.your-game option:selected`).text());
-    $(`header h3`).text($(`select.your-game option:selected`).text());
+    $(`h1`).text($(`main select.your-game option:selected`).text());
+    $(`header h3`).text($(`main select.your-game option:selected`).text());
     $(`.main-page-head`).css(
       `background`, `linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('../../img/${fileName}-bg.jpg') bottom/cover no-repeat fixed`
     );
@@ -101,10 +101,10 @@ $(document).ready(function() {
 
     // Clear the character select lists.
 
-    $(`select.your-character`).empty();
-    $(`select.your-character`).append(`<option value="">--Your character--</option>`)
-    $(`select.opp-character`).empty();
-    $(`select.opp-character`).append(`<option value="">--Their character--</option>`)
+    $(`main select.your-character`).empty();
+    $(`main select.your-character`).append(`<option value="">--Your character--</option>`)
+    $(`main select.opp-character`).empty();
+    $(`main select.opp-character`).append(`<option value="">--Their character--</option>`)
 
     // Also clear the notes list when the game changes.
 
@@ -129,10 +129,97 @@ $(document).ready(function() {
     // Append the character list to the drop downs.
 
     for (let i = 0; i < characterList.length; i = i + 1) {
-      $(`select.your-character`).append(`<option value="${characterList[i].characterShorthand}">${characterList[i].characterName}</option>`);
-      $(`select.opp-character`).append(`<option value="${characterList[i].characterShorthand}">${characterList[i].characterName}</option>`);
+      $(`main select.your-character`).append(`<option value="${characterList[i].characterShorthand}">${characterList[i].characterName}</option>`);
+      $(`main select.opp-character`).append(`<option value="${characterList[i].characterShorthand}">${characterList[i].characterName}</option>`);
     }
   });
+
+  $(`.add-notes-popup select.your-game`).change(function() {
+    fileName = $(`.add-notes-popup select.your-game option:selected`).val();
+
+    $(`h1`).text($(`.add-notes-popup select.your-game option:selected`).text());
+    $(`header h3`).text($(`.add-notes-popup select.your-game option:selected`).text());
+    $(`.main-page-head`).css(
+      `background`, `linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('../../img/${fileName}-bg.jpg') bottom/cover no-repeat fixed`
+    );
+
+    // Clear the arrays just in case the game changed.
+    characterList = [];
+
+    // Clear the character select lists.
+
+    $(`.add-notes-popup select.your-character`).empty();
+    $(`.add-notes-popup select.your-character`).append(`<option value="">--Your character--</option>`)
+    $(`.add-notes-popup select.opp-character`).empty();
+    $(`.add-notes-popup select.opp-character`).append(`<option value="">--Their character--</option>`)
+
+    // Iterate through the character data array and find the characters in the selected game.
+    for (let i = 0; i < fgcDB.characterData.elements.length; i = i + 1) {
+      if (fgcDB.characterData.elements[i].gameShorthand === fileName) {
+        // Return the character objects to their own array. This makes it easier to create the character list.
+        characterList.push(fgcDB.characterData.elements[i]);
+      }
+    }
+
+    // Iterate through the game notes to find all notes that are relevant to the selected game.
+    for (let i = 0; i < fgcDB.gameNotes.elements.length; i = i + 1) {
+      if (fgcDB.gameNotes.elements[i].gameShorthand === fileName) {
+        // Return the notes to their own array.
+        gameNotes.push(fgcDB.gameNotes.elements[i]);
+      }
+    }
+
+    // Append the character list to the drop downs.
+
+    for (let i = 0; i < characterList.length; i = i + 1) {
+      $(`.add-notes-popup select.your-character`).append(`<option value="${characterList[i].characterShorthand}">${characterList[i].characterName}</option>`);
+      $(`.add-notes-popup select.opp-character`).append(`<option value="${characterList[i].characterShorthand}">${characterList[i].characterName}</option>`);
+    }
+  });
+
+
+
+  var $form = $('.add-notes-form'),
+
+    url = 'https://script.google.com/macros/s/AKfycbwxexORxSnjRTnYh0ZRWA8QxsTVuHE4BiDb-oc6VP1dZXtHHU6q/exec'
+
+    $.fn.serializeObject = function() {
+    	var o = {};
+    	var a = this.serializeArray();
+    	$.each(a, function() {
+    		if (o[this.name]) {
+    			if (!o[this.name].push) {
+    				o[this.name] = [o[this.name]];
+    			}
+    			o[this.name].push(this.value || '');
+    		} else {
+    			o[this.name] = this.value || '';
+    		}
+    	});
+    	return o;
+    };
+
+$('.add-notes-submit').on('click', function(e) {
+
+  e.preventDefault();
+
+  var jqxhr = $.ajax({
+
+    url: url,
+
+    method: "POST",
+
+    dataType: "jsonp",
+
+    data: $form.serializeObject()
+
+  }).success(
+
+    console.log(`success!`),
+
+  );
+
+})
 
   $('.show-notes').click(function(e) {
     e.preventDefault();

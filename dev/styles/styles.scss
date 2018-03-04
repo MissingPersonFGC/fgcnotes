@@ -284,7 +284,34 @@ footer {
 }
 
 .add-notes-popup {
+  text-align: center;
+  width: 80%;
+  margin: 0 auto;
 
+  h4 {
+    text-align: left;
+  }
+  select {
+    background: $color-accent;
+    border: 0;
+    color: $color-main;
+    padding: 5px;
+    margin-right: 10px;
+    font-family: $font-main;
+  }
+
+  textarea {
+    background: $color-main;
+    border: 1px $color-accent solid;
+    font-family: $font-main;
+    color: $color-accent;
+  }
+
+  button {
+    @include button($color-accent, $color-main, $font-main);
+    border: 0;
+    margin-top: 20px;
+  }
 }
 
 @import 'media';

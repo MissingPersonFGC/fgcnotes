@@ -30,8 +30,7 @@ figure {
   margin: 1em 40px; }
 
 hr {
-  -webkit-box-sizing: content-box;
-          box-sizing: content-box;
+  box-sizing: content-box;
   height: 0;
   overflow: visible; }
 
@@ -120,8 +119,7 @@ fieldset {
   padding: .35em .75em .625em; }
 
 legend {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   color: inherit;
   display: table;
   max-width: 100%;
@@ -136,8 +134,7 @@ textarea {
   overflow: auto; }
 
 [type=checkbox], [type=radio] {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   padding: 0; }
 
 [type=number]::-webkit-inner-spin-button, [type=number]::-webkit-outer-spin-button {
@@ -185,7 +182,6 @@ template {
 /*End Clearfix*/
 /*Border Box*/
 * {
-  -webkit-box-sizing: border-box;
   box-sizing: border-box; }
 
 /*End Border Box*/
@@ -202,7 +198,6 @@ header {
   padding: 0;
   text-align: center; }
   header.main-page-head {
-    background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.6)), to(rgba(0, 0, 0, 0.6))), url("../../img/background.jpg");
     background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("../../img/background.jpg");
     background-repeat: no-repeat;
     background-position: bottom;
@@ -218,13 +213,8 @@ header {
     position: absolute;
     top: 0;
     right: 10%;
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
+    flex-direction: row;
     padding-top: 20px;
     z-index: 10; }
     header .login .exit-button {
@@ -244,7 +234,6 @@ header {
       color: #f5f5f5;
       background: #ff7148;
       font-family: "American Captain", sans-serif;
-      -webkit-transition: background 0.5s, border-radius 0.5s;
       transition: background 0.5s, border-radius 0.5s;
       letter-spacing: 2px; }
       header .login a:hover {
@@ -295,7 +284,6 @@ main {
       color: #f5f5f5;
       background: #ff7148;
       font-family: "American Captain", sans-serif;
-      -webkit-transition: background 0.5s, border-radius 0.5s;
       transition: background 0.5s, border-radius 0.5s;
       font-size: 1.1rem;
       letter-spacing: 2px; }
@@ -318,7 +306,6 @@ main {
       color: #f5f5f5;
       background: #93b1c6;
       font-family: "Falling Sky", sans-serif;
-      -webkit-transition: background 0.5s, border-radius 0.5s;
       transition: background 0.5s, border-radius 0.5s; }
       main .char-select a:hover, main .game-select a:hover {
         background: #7299b4;
@@ -361,7 +348,6 @@ main {
       color: #f5f5f5;
       background: #93b1c6;
       font-family: "Falling Sky", sans-serif;
-      -webkit-transition: background 0.5s, border-radius 0.5s;
       transition: background 0.5s, border-radius 0.5s; }
       .char-notes .wrapper a:hover {
         background: #7299b4;
@@ -373,7 +359,6 @@ main {
 .char-notes ul li, .char-notes .wrapper {
   visibility: hidden;
   opacity: 0;
-  -webkit-transition: opacity 0.5s;
   transition: opacity 0.5s;
   display: none; }
 
@@ -387,7 +372,6 @@ main {
 .char-notes ul li.show, .char-notes .wrapper.show {
   visibility: visible;
   opacity: 1;
-  -webkit-transition: opacity 0.5s;
   transition: opacity 0.5s;
   display: block; }
 
@@ -403,18 +387,13 @@ footer {
     max-width: 1250px;
     margin: 0 auto;
     padding: 0;
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-pack: start;
-        -ms-flex-pack: start;
-            justify-content: flex-start; }
+    justify-content: flex-start; }
     footer .wrapper a {
       color: #f5f5f5;
       display: inline-block;
       font-size: 17.5px;
       padding: 2px;
-      -webkit-transition: background 0.5s, color 0.5s;
       transition: background 0.5s, color 0.5s; }
       footer .wrapper a:hover {
         background: #f5f5f5;
@@ -427,6 +406,39 @@ footer {
       text-align: right;
       padding-right: 7.5%; }
 
+.add-notes-popup {
+  text-align: center;
+  width: 80%;
+  margin: 0 auto; }
+  .add-notes-popup h4 {
+    text-align: left; }
+  .add-notes-popup select {
+    background: #ff7148;
+    border: 0;
+    color: #f5f5f5;
+    padding: 5px;
+    margin-right: 10px;
+    font-family: "Falling Sky", sans-serif; }
+  .add-notes-popup textarea {
+    background: #f5f5f5;
+    border: 1px #ff7148 solid;
+    font-family: "Falling Sky", sans-serif;
+    color: #ff7148; }
+  .add-notes-popup button {
+    padding: 10px 30px;
+    text-transform: uppercase;
+    text-decoration: none;
+    display: inline-block;
+    color: #f5f5f5;
+    background: #ff7148;
+    font-family: "Falling Sky", sans-serif;
+    transition: background 0.5s, border-radius 0.5s;
+    border: 0;
+    margin-top: 20px; }
+    .add-notes-popup button:hover {
+      background: #ff4915;
+      border-radius: 5px; }
+
 @media (max-width: 414px) {
   header {
     height: auto;
@@ -436,16 +448,10 @@ footer {
       z-index: 10; }
     header .login {
       display: none;
-      -webkit-box-orient: vertical;
-      -webkit-box-direction: normal;
-          -ms-flex-direction: column;
-              flex-direction: column;
+      flex-direction: column;
       width: 95%;
-      -ms-flex-pack: distribute;
-          justify-content: space-around;
-      -webkit-box-align: center;
-          -ms-flex-align: center;
-              align-items: center;
+      justify-content: space-around;
+      align-items: center;
       position: absolute;
       z-index: 9;
       top: 12.5px;

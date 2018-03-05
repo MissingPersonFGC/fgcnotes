@@ -576,4 +576,15 @@ footer {
         width: 50%; }
         footer .wrapper .social-media a {
           font-size: 0.6rem;
-          text-align: right; } }
+          text-align: right; }
+  .add-notes-popup select {
+    font-size: 0.72rem;
+    margin-right: 5px;
+    padding: 1px; }
+  .add-notes-popup button {
+    padding: 5px 15px; }
+  .add-notes-popup textarea {
+    width: 250px;
+    font-size: 0.72rem; }
+  .add-notes-popup h4 {
+    font-size: 0.94rem; } }

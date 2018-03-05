@@ -183,5 +183,24 @@
     }
   }
 
+  .add-notes-popup {
+    select {
+      font-size: 0.72rem;
+      margin-right: 5px;
+      padding: 1px;
+    }
 
+    button {
+      padding: 5px 15px;
+    }
+
+    textarea {
+      width: 250px;
+      font-size: 0.72rem;
+    }
+
+    h4 {
+      font-size: 0.94rem;
+    }
+  }
 }

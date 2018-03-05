@@ -296,7 +296,7 @@ footer {
   &.make-visible {
     display: block;
     z-index: 30;
-    position: absolute;
+    position: fixed;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);

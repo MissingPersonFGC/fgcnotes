@@ -96,7 +96,7 @@
   }
 
   main {
-    margin-top: 75px;
+    margin-top: 30px;
     padding-bottom: 20px;
 
     .selection-head {
@@ -106,7 +106,17 @@
       }
     }
 
-    .char-select, .game-select, .char-notes {
+    .notes-add {
+
+      a {
+        font-size: 0.8rem;
+        margin-top: 10px;
+        margin-left: 5px;
+        padding: 5px 15px;
+      }
+    }
+
+    .char-select, .game-select, .char-notes,  {
       font-size:  0.72rem;
 
       select {
@@ -172,4 +182,6 @@
       }
     }
   }
+
+
 }

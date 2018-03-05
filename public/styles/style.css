@@ -418,7 +418,7 @@ footer {
   .add-notes-popup.make-visible {
     display: block;
     z-index: 30;
-    position: absolute;
+    position: fixed;
     left: 50%;
     top: 50%;
     -webkit-transform: translate(-50%, -50%);
@@ -529,10 +529,15 @@ footer {
     header .wrapper {
       display: none; }
   main {
-    margin-top: 75px;
+    margin-top: 30px;
     padding-bottom: 20px; }
     main .selection-head h2, main .char-select h2, main .game-select h2 {
       font-size: 1.2rem; }
+    main .notes-add a {
+      font-size: 0.8rem;
+      margin-top: 10px;
+      margin-left: 5px;
+      padding: 5px 15px; }
     main .char-select, main .game-select, main .char-notes {
       font-size: 0.72rem; }
       main .char-select select, main .game-select select, main .char-notes select {

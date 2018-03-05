@@ -79,7 +79,7 @@
       <section class="game-select clearfix">
         <select class="your-game" name="your-game">
           <!-- Empty drop-down item to prevent the first game from showing by default with no characters underneath. Shows user that input is required. The list will populate below the empty item. -->
-          <option value="">--Select your game--</option>
+          <option value="" disabled selected>--Select your game--</option>
         </select>
       </section>
 
@@ -88,11 +88,11 @@
       </section>
       <section class="char-select clearfix">
         <select class="your-character" name="your-character">
-          <option value="">--Your character--</option>
+          <option value="" disabled selected>--Your character--</option>
         </select>
         vs.
         <select class="opp-character" name="opp-character">
-          <option value="">--Their character--</option>
+          <option value="" disabled selected>--Their character--</option>
         </select>
 
         <a href="#stick" class="button show-notes desktop"><i class="fas fa-eye"></i> Show Notes</a>
@@ -106,7 +106,7 @@
         <div class="wrapper">
           Filter by:
           <select class="note-filter" name="note-filter">
-            <option value="">--Filter by--</option>
+            <option value="" disabled selected>--Filter by--</option>
             <option value="punish">Punish</option>
             <option value="anti-air">Anti-air</option>
             <option value="air-to-air">Air-to-air</option>
@@ -169,25 +169,26 @@
         <div class="add-notes-game">
           <h4>Game:</h4>
           <select class="your-game" name="gameShorthand">
-
+            <option value="" disabled selected>--Select your game--</option>
           </select>
         </div>
         <div class="add-notes-matchup">
           <h4>Matchup:</h4>
           <select class="your-character" name="yourCharacter">
-
+            <option value="" disabled selected>--Your character--</option>
           </select>
 
           vs.
 
           <select class="opp-character" name="opponentCharacter">
-
+            <option value="" disabled selected>--Their character--</option>
           </select>
         </div>
         <div class="add-notes-type">
           <h4>Type of Note:</h4>
 
           <select class="note-type" name="noteType">
+            <option value="" disabled selected>--Note type--</option>
             <option value="punish">Punish</option>
             <option value="anti-air">Anti-air</option>
             <option value="air-to-air">Air-to-air</option>

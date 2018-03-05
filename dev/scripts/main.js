@@ -163,6 +163,7 @@ $(document).ready(function() {
 
     // Clear the arrays just in case the game changed.
     characterList = [];
+    punishData = [];
 
     // Clear the character select lists.
 

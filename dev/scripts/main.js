@@ -167,9 +167,11 @@ $(document).ready(function() {
     // Clear the character select lists.
 
     $(`.add-notes-popup select.your-character`).empty();
-    $(`.add-notes-popup select.your-character`).append(`<option value="">--Your character--</option>`)
+    $(`.add-notes-popup select.your-character`).append(`<option value="" disabled selected>--Your character--</option>`)
     $(`.add-notes-popup select.opp-character`).empty();
-    $(`.add-notes-popup select.opp-character`).append(`<option value="">--Their character--</option>`)
+    $(`.add-notes-popup select.opp-character`).append(`<option value="" disabled selected>--Their character--</option>`)
+    $(`.add-notes-popup select.note-type`).empty();
+    $(`.add-notes-popup select.note-type`).append(`<option value="" disabled selected>--Note type--</option>`)
 
     // Iterate through the character data array and find the characters in the selected game.
     for (let i = 0; i < fgcDB.characterData.elements.length; i = i + 1) {
@@ -192,6 +194,16 @@ $(document).ready(function() {
     for (let i = 0; i < characterList.length; i = i + 1) {
       $(`.add-notes-popup select.your-character`).append(`<option value="${characterList[i].characterShorthand}">${characterList[i].characterName}</option>`);
       $(`.add-notes-popup select.opp-character`).append(`<option value="${characterList[i].characterShorthand}">${characterList[i].characterName}</option>`);
+    }
+
+    for (let i = 0; i < fgcDB.punishData.elements.length; i = i + 1) {
+      if (fgcDB.punishData.elements[i].gameShorthand === fileName || fgcDB.punishData.elements[i].gameShorthand === "global") {
+        punishData.push(fgcDB.punishData.elements[i]);
+      }
+    }
+
+    for (let i = 0; i < punishData.length; i = i + 1) {
+      $(`.add-notes-popup select.note-type`).append(`<option value="${punishData[i].noteShorthand}">${punishData[i].noteType}</option>`);
     }
   });
 
@@ -242,7 +254,7 @@ $('.add-notes-submit').on('click', function(e) {
 
   // Add hidden form field to add notes that will populate the noteLongform column in the Notes database.
 
-  $(`.add-notes-popup form`).append(`<input type="hidden" name="noteLongform" value="${$(`select[name=noteType]`).text()}>"`);
+  $(`.add-notes-popup form`).append(`<input type="hidden" name="noteLongform" value="${($(`select[name=noteType] option:selected`).text())}">"`);
 
   // Post to the game notes array so that the user doesn't have to refresh to view the new notes.
 

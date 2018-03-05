@@ -14,6 +14,8 @@ var gameNotes = [];
 
 var gameList = [];
 
+var punishData = [];
+
 // Access Google Sheet;
 
 var publicSpreadsheetUrl = 'https://docs.google.com/spreadsheets/d/19HR6knMWzdqtdhWucRAa3uXQfLsOO3SuUQE_MPL-LFE/pubhtml';
@@ -97,13 +99,16 @@ $(document).ready(function () {
     // Clear the arrays just in case the game changed.
     characterList = [];
     gameNotes = [];
+    punishData = [];
 
     // Clear the character select lists.
 
     $('main select.your-character').empty();
-    $('main select.your-character').append('<option value="">--Your character--</option>');
+    $('main select.your-character').append('<option value="" disabled selected>--Your character--</option>');
     $('main select.opp-character').empty();
-    $('main select.opp-character').append('<option value="">--Their character--</option>');
+    $('main select.opp-character').append('<option value="" disabled selected>--Their character--</option>');
+    $('main select.note-filter').empty();
+    $('main select.note-filter').append('<option value="" disabled selected>--Filter by--</option>');
 
     // Also clear the notes list when the game changes.
 
@@ -125,11 +130,24 @@ $(document).ready(function () {
       }
     }
 
+    // Iterate through the punish data to find the types pertinent to the game.
+
+    for (var _i3 = 0; _i3 < fgcDB.punishData.elements.length; _i3 = _i3 + 1) {
+      if (fgcDB.punishData.elements[_i3].gameShorthand === fileName || fgcDB.punishData.elements[_i3].gameShorthand === "global") {
+        punishData.push(fgcDB.punishData.elements[_i3]);
+      }
+    }
+
     // Append the character list to the drop downs.
 
-    for (var _i3 = 0; _i3 < characterList.length; _i3 = _i3 + 1) {
-      $('main select.your-character').append('<option value="' + characterList[_i3].characterShorthand + '">' + characterList[_i3].characterName + '</option>');
-      $('main select.opp-character').append('<option value="' + characterList[_i3].characterShorthand + '">' + characterList[_i3].characterName + '</option>');
+    for (var _i4 = 0; _i4 < characterList.length; _i4 = _i4 + 1) {
+      $('main select.your-character').append('<option value="' + characterList[_i4].characterShorthand + '">' + characterList[_i4].characterName + '</option>');
+      $('main select.opp-character').append('<option value="' + characterList[_i4].characterShorthand + '">' + characterList[_i4].characterName + '</option>');
+    }
+
+    // Append the punish filters to the drop down.
+    for (var _i5 = 0; _i5 < punishData.length; _i5 = _i5 + 1) {
+      $('main select.note-filter').append('<option value="' + punishData[_i5].noteShorthand + '">' + punishData[_i5].noteType + '</option>');
     }
   });
 
@@ -159,18 +177,18 @@ $(document).ready(function () {
     }
 
     // Iterate through the game notes to find all notes that are relevant to the selected game.
-    for (var _i4 = 0; _i4 < fgcDB.gameNotes.elements.length; _i4 = _i4 + 1) {
-      if (fgcDB.gameNotes.elements[_i4].gameShorthand === fileName) {
+    for (var _i6 = 0; _i6 < fgcDB.gameNotes.elements.length; _i6 = _i6 + 1) {
+      if (fgcDB.gameNotes.elements[_i6].gameShorthand === fileName) {
         // Return the notes to their own array.
-        gameNotes.push(fgcDB.gameNotes.elements[_i4]);
+        gameNotes.push(fgcDB.gameNotes.elements[_i6]);
       }
     }
 
     // Append the character list to the drop downs.
 
-    for (var _i5 = 0; _i5 < characterList.length; _i5 = _i5 + 1) {
-      $('.add-notes-popup select.your-character').append('<option value="' + characterList[_i5].characterShorthand + '">' + characterList[_i5].characterName + '</option>');
-      $('.add-notes-popup select.opp-character').append('<option value="' + characterList[_i5].characterShorthand + '">' + characterList[_i5].characterName + '</option>');
+    for (var _i7 = 0; _i7 < characterList.length; _i7 = _i7 + 1) {
+      $('.add-notes-popup select.your-character').append('<option value="' + characterList[_i7].characterShorthand + '">' + characterList[_i7].characterName + '</option>');
+      $('.add-notes-popup select.opp-character').append('<option value="' + characterList[_i7].characterShorthand + '">' + characterList[_i7].characterName + '</option>');
     }
   });
 
@@ -259,7 +277,7 @@ $(document).ready(function () {
     for (var i = 0; i < gameNotes.length; i = i + 1) {
       if (yourChar === gameNotes[i].yourCharacter && oppChar === gameNotes[i].opponentCharacter) {
         // Create the list of notes.
-        $('.notes ul').append('<li class="' + yourChar + '-v-' + oppChar + ' ' + gameNotes[i].noteType + '"><span class="note-type">' + gameNotes[i].noteType + ':</span> ' + gameNotes[i].note + '</li>');
+        $('.notes ul').append('<li class="' + yourChar + '-v-' + oppChar + ' ' + gameNotes[i].noteType + '"><span class="note-type">' + gameNotes[i].noteLongform + ':</span> ' + gameNotes[i].note + '</li>');
         $('li.' + yourChar + '-v-' + oppChar).addClass('show');
       }
     }
@@ -291,7 +309,7 @@ $(document).ready(function () {
         var charNote = $('.' + yourChar + '-v-' + oppChar);
         $(charNote).addClass('show');
 
-        //Just ensuring nothing breaks on prepending
+        // Just ensuring nothing breaks on prepending
         $('ul').each(function () {
           $(this).children('.show').prependTo(this);
         });

@@ -12,6 +12,8 @@ let gameNotes = [];
 
 let gameList = [];
 
+let punishData = [];
+
 
 // Access Google Sheet;
 
@@ -98,13 +100,16 @@ $(document).ready(function() {
     // Clear the arrays just in case the game changed.
     characterList = [];
     gameNotes = [];
+    punishData = [];
 
     // Clear the character select lists.
 
     $(`main select.your-character`).empty();
-    $(`main select.your-character`).append(`<option value="">--Your character--</option>`)
+    $(`main select.your-character`).append(`<option value="" disabled selected>--Your character--</option>`)
     $(`main select.opp-character`).empty();
-    $(`main select.opp-character`).append(`<option value="">--Their character--</option>`)
+    $(`main select.opp-character`).append(`<option value="" disabled selected>--Their character--</option>`)
+    $(`main select.note-filter`).empty();
+    $(`main select.note-filter`).append(`<option value="" disabled selected>--Filter by--</option>`)
 
     // Also clear the notes list when the game changes.
 
@@ -126,11 +131,24 @@ $(document).ready(function() {
       }
     }
 
+    // Iterate through the punish data to find the types pertinent to the game.
+
+    for (let i = 0; i < fgcDB.punishData.elements.length; i = i + 1) {
+      if (fgcDB.punishData.elements[i].gameShorthand === fileName || fgcDB.punishData.elements[i].gameShorthand === "global") {
+        punishData.push(fgcDB.punishData.elements[i]);
+      }
+    }
+
     // Append the character list to the drop downs.
 
     for (let i = 0; i < characterList.length; i = i + 1) {
       $(`main select.your-character`).append(`<option value="${characterList[i].characterShorthand}">${characterList[i].characterName}</option>`);
       $(`main select.opp-character`).append(`<option value="${characterList[i].characterShorthand}">${characterList[i].characterName}</option>`);
+    }
+
+    // Append the punish filters to the drop down.
+    for (let i = 0; i < punishData.length; i = i + 1) {
+      $(`main select.note-filter`).append(`<option value="${punishData[i].noteShorthand}">${punishData[i].noteType}</option>`);
     }
   });
 
@@ -233,7 +251,7 @@ $('.add-notes-submit').on('click', function(e) {
   });
 
   // Send form results to Google Sheet.
-  
+
   var jqxhr = $.ajax({
 
     url: url,
@@ -267,7 +285,7 @@ $('.add-notes-submit').on('click', function(e) {
     for (let i = 0; i < gameNotes.length; i = i + 1) {
       if (yourChar === gameNotes[i].yourCharacter && oppChar === gameNotes[i].opponentCharacter) {
         // Create the list of notes.
-        $(`.notes ul`).append(`<li class="${yourChar}-v-${oppChar} ${gameNotes[i].noteType}"><span class="note-type">${gameNotes[i].noteType}:</span> ${gameNotes[i].note}</li>`);
+        $(`.notes ul`).append(`<li class="${yourChar}-v-${oppChar} ${gameNotes[i].noteType}"><span class="note-type">${gameNotes[i].noteLongform}:</span> ${gameNotes[i].note}</li>`);
         $(`li.${yourChar}-v-${oppChar}`).addClass(`show`);
       }
     }
@@ -299,7 +317,7 @@ $('.add-notes-submit').on('click', function(e) {
         var charNote = $('.' + yourChar + '-v-' + oppChar);
         $(charNote).addClass('show');
 
-        //Just ensuring nothing breaks on prepending
+        // Just ensuring nothing breaks on prepending
         $('ul').each(function() {
           $(this).children('.show').prependTo(this);
         });

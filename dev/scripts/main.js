@@ -240,11 +240,16 @@ $('.add-notes-submit').on('click', function(e) {
 
   e.preventDefault();
 
+  // Add hidden form field to add notes that will populate the noteLongform column in the Notes database.
+
+  $(`.add-notes-popup form`).append(`<input type="hidden" name="noteLongform" value="${$(`select[name=noteType]`).text()}>"`);
+
   // Post to the game notes array so that the user doesn't have to refresh to view the new notes.
 
   fgcDB.gameNotes.elements.push({
     gameShorthand: $(`select[name=gameShorthand]`).val(),
     note: $(`textarea[name=note]`).val(),
+    noteLongform: $(`input[name=noteLongform]`).val(),
     noteType: $(`select[name=noteType]`).val(),
     opponentCharacter: $(`select[name=opponentCharacter]`).val(),
     yourCharacter: $(`select[name=yourCharacter]`).val(),
@@ -268,7 +273,11 @@ $('.add-notes-submit').on('click', function(e) {
 
   );
 
-})
+  // remove the hidden field for next time.
+
+  $(`input[type=hidden]`).remove();
+
+});
 
   $('.show-notes').click(function(e) {
     e.preventDefault();

@@ -22,6 +22,13 @@ gulp.task('scripts', () => {
     }))
     .pipe(gulp.dest('./public/scripts'))
     .pipe(reload({stream: true}));
+
+  return gulp.src('./dev/scripts/main-jquery_i18n.js')
+    .pipe(babel({
+      presets: ['env']
+    }))
+    .pipe(gulp.dest('./public/scripts'))
+    .pipe(reload({stream: true}));
 });
 
 gulp.task('browser-sync', () => {

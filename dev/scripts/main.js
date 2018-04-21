@@ -90,8 +90,6 @@ $(document).ready(function() {
 
   $(`main select.your-game`).change(function() {
     fileName = $(`main select.your-game option:selected`).val();
-
-    $(`h1`).text($(`main select.your-game option:selected`).text());
     $(`header h3`).text($(`main select.your-game option:selected`).text());
     $(`.main-page-head`).css(
       `background`, `linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('../../img/${fileName}-bg.jpg') bottom/cover no-repeat fixed`
